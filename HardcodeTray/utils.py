@@ -2,8 +2,8 @@
 Fixes Hardcoded tray icons in Linux.
 
 Author : Bilal Elmoussaoui (bil.elmoussaoui@gmail.com)
-Contributors : Andreas Angerer, Joshua Fogg
-Website : https://github.com/bil-elmoussaoui/Hardcode-Tray
+Contributors : Andreas Angerer, Joshua Fogg, Peter J. Mello
+Website : https://github.com/bilelmoussaoui/Hardcode-Tray
 Licence : The script is released under GPL, uses a modified script
      form Chromium project released under BSD license
 This file is part of Hardcode-Tray.
@@ -19,7 +19,6 @@ You should have received a copy of the GNU General Public License
 along with Hardcode-Tray. If not, see <http://www.gnu.org/licenses/>.
 """
 from functools import reduce
-from gettext import gettext as _
 from os import makedirs, listdir, path, remove, symlink
 from re import findall, match, sub
 from shutil import copyfile
@@ -33,7 +32,7 @@ from HardcodeTray.modules.log import Logger
 
 
 def progress(count, count_max, time, app_name=""):
-    """Used to draw a progress bar."""
+    """Draw a progress bar."""
     bar_len = 36
     space = 20
     filled_len = int(round(bar_len * count / float(count_max)))
@@ -63,7 +62,7 @@ def symlink_file(source, link_name):
 
 def copy_file(src, destination, overwrite=False):
     """
-    Simple copy file function with the possibility to overwrite the file.
+    Copy file function simply with the possibility to overwrite the file.
 
     Args :
         src(str) : source file
@@ -129,8 +128,7 @@ def get_gnome_scaling_factor():
         scaling_factor = gsettings.get_uint('scaling-factor') + 1
         Logger.debug("Scaling Factor/GNOME: {}".format(scaling_factor))
         return scaling_factor
-    else:
-        Logger.debug("Scaling Factor/Gnome not detected.")
+    Logger.debug("Scaling Factor/Gnome not detected.")
     return 1
 
 
@@ -145,8 +143,7 @@ def get_cinnamon_scaling_factor():
             scaling_factor = 1
         Logger.debug("Scaling Factor/Cinnamon: {}".format(scaling_factor))
         return scaling_factor
-    else:
-        Logger.debug("Scaling Factor/Cinnamon not detected")
+    Logger.debug("Scaling Factor/Cinnamon not detected")
     return 1
 
 
@@ -190,7 +187,7 @@ def is_installed(binary):
 
 
 def get_iterated_icons(icons):
-    """Used to avoid multiple icons names, like for telegram."""
+    """Avoid multiple icon names, like for telegram."""
     new_icons = []
     for icon in icons:
         search = findall(r"{\d+\-\d+}", icon)
@@ -239,7 +236,7 @@ def set_in_dict(data_dict, map_list, value):
 
 
 def change_dict_vals(d, sizediff, offset):
-    """Iterative funtion to account for the new size of the png bytearray."""
+    """Iterate function to account for the new size of the png bytearray."""
     if isinstance(d, dict):
         d2 = {k: change_dict_vals(v, sizediff, offset) for k, v in d.items()}
         if d2.get('offset') and int(d2.get('offset')) > offset:
@@ -249,13 +246,13 @@ def change_dict_vals(d, sizediff, offset):
 
 
 def replace_to_6hex(color):
-    """Validate and replace 3hex colors to 6hex ones."""
+    """Validate and replace short hex colors with long hex ones."""
     if match(r"^#(?:[0-9a-fA-F]{3}){1,2}$", color):
         if len(color) == 4:
             color = "#{0}{0}{1}{1}{2}{2}".format(color[1], color[2], color[3])
         return color
-    else:
-        exit(_("Invalid color {}").format(color))
+    Logger.error("Invalid color {}")
+    return 1
 
 
 def replace_colors(file_name, colors):
@@ -278,9 +275,7 @@ def replace_colors(file_name, colors):
 
 
 def get_exact_folder(key, directory, condition):
-    """
-        Get subdirs and apply a condition on each until one is found.
-    """
+    """Get subdirs and apply a condition on each until one is found."""
     dirs = directory.split(key)
     exact_directory = ""
 
