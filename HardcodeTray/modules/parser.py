@@ -29,11 +29,19 @@ from HardcodeTray.utils import create_dir, get_iterated_icons
 
 
 class Parser:
-    """
-        Parse Json database file
-    """
+    """Parse Json database file."""
 
     def __init__(self, db_file):
+        """Map database file values to variables.
+
+        Parameters
+        ----------
+        _db_file : str
+        Filename of json file from database directory.
+        app_path : str
+        Absolute path to application executable.
+
+        """
         self._db_file = db_file
         self.app_path = []
         self.icons_path = []
@@ -50,7 +58,7 @@ class Parser:
         """Get the type of database(Application) file."""
         if hasattr(self, "script") and self.script:
             return self.script
-        elif hasattr(self, "is_qt") and self.is_qt:
+        if hasattr(self, "is_qt") and self.is_qt:
             return "qt"
         return "application"
 
@@ -73,9 +81,7 @@ class Parser:
         return load(self.get_type())(self)
 
     def _read(self):
-        """
-            Read the json file and parse it.
-        """
+        """Read the json file and parse it."""
         from HardcodeTray.app import App
         do_later = ["app_path", "icons_path", "icons"]
         try:
@@ -111,7 +117,8 @@ class Parser:
         for path in paths:
             path = Path(path, self, key)
             # Check if path exists
-            if path.exists or (self.force_create_folder and key == "icons_path"):
+            if path.exists or (
+                    self.force_create_folder and key == "icons_path"):
                 getattr(self, key).append(path)
 
     def _parse_icons(self, icons):

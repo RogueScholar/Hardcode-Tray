@@ -1,0 +1,15 @@
+{
+    "name": "Spotify",
+    "app_path": [
+        "/usr/share/spotify/"
+    ],
+    "icons_path": [
+        "/usr/share/spotify/icons/"
+    ],
+    "icons": {
+        "tray": {
+            "original": "spotify-linux-48.png",
+            "theme": "spotify"
+        }
+    }
+}
