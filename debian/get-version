@@ -1,0 +1,4 @@
+#!/bin/sh
+set -e
+
+dpkg-parsechangelog -SVersion | sed -rne 's/([0-9.]+)[-+].*$$/\1/p'
