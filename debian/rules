@@ -19,12 +19,13 @@ override_dh_auto_clean:
 
 override_dh_auto_configure:
 	install -d $(CURDIR)/builddir
-	meson $(CURDIR)/builddir --prefix=/usr
+	meson setup --prefix=/usr --buildtype debugoptimized --optimization 2 \
+		--strip $(CURDIR)/builddir $(CURDIR)
 
 override_dh_auto_build:
-	cd $(CURDIR)/builddir && ninja -v
+	ninja -v -C $(CURDIR)/builddir
 
 override_dh_auto_install:
-	DESTDIR=$(CURDIR)/debian/hardcode-tray ninja -C $(CURDIR)/builddir install
+	DESTDIR=$(CURDIR)/debian/hardcode-tray ninja -v -C $(CURDIR)/builddir install
 
 override_dh_auto_test:
