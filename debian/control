@@ -2,20 +2,25 @@ Source: hardcode-tray
 Section: misc
 Priority: optional
 Maintainer: Peter J. Mello <admin@petermello.net>
-Build-Depends: debhelper-compat (= 12), meson (>= 0.40), libgirepository1.0-dev,
- libgtk-3-dev
+Build-Depends: debhelper-compat (= 12), dh-python, dh-sequence-python3,
+ python3:any, meson (>= 0.46), libgirepository1.0-dev, libgtk-3-dev
 Standards-Version: 4.5.0
 Homepage: https://github.com/bilelmoussaoui/Hardcode-Tray
-Vcs-Browser: https://github.com/bilelmoussaoui/Hardcode-Tray
-Vcs-Git: https://github.com/bilelmoussaoui/Hardcode-Tray.git
+Vcs-Browser: https://github.com/RogueScholar/Hardcode-Tray
+Vcs-Git: https://github.com/RogueScholar/Hardcode-Tray.git -b debian
 Rules-Requires-Root: no
+X-Python3-Version: >= 3.6
 
 Package: hardcode-tray
 Architecture: all
 Depends: python3, python3-gi, gir1.2-rsvg-2.0, librsvg2-bin, gir1.2-gtk-3.0,
- ${misc:Depends}
+ ${python3:Depends}, ${misc:Depends}
 Suggests: inkscape, sni-qt, python3-cairosvg, libqt4-svg
-Description: Fixes Hardcoded tray icons in Linux
- Hardcode-Tray is a python utility that fetches theme icons for
- application tray icons and replaces the hardcoded once, usually
- packaged with Qt or Electron applications.
+Description: Fixes hard-coded (unthemed) tray icons in Linux
+ Hardcode-Tray is a utility (written in Python 3) for modern Linux desktop
+ environments that fetches themed icons for tray/panel icons if they are
+ hard-coded within an installed application (and thus fail to respect the DE's
+ theme settings; usually Qt or Electron applications) and backs up then
+ replaces them with the current theme's variants, once. Subsequent updates to
+ the applications will naturally overwrite the changes, requiring another
+ invocation of Hardcode-Tray to restore the theming.

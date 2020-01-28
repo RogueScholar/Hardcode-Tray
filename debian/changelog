@@ -1,5 +1,11 @@
-hardcode-tray (4.3-1) UNRELEASED; urgency=low
+hardcode-tray (4.4-0.1daily) UNRELEASED; urgency=medium
+
+  * Automatic daily development build from git master for Launchpad PPA
+
+ -- Peter J. Mello <admin@petermello.net>  Mon, 27 Jan 2020 17:53:43 -0800
+
+hardcode-tray (4.3-1) experimental; urgency=low
 
   * New upstream release
 
- -- Peter J. Mello <admin@petermello.net>  Mon, 27 Jan 2020 17:53:43 -0800
+ -- Sergei Eremenko <finalitik@gmail.com>  Wed, 27 Mar 2019 11:22:06 +0200
