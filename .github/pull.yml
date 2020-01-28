@@ -5,6 +5,7 @@ rules:
     mergeMethod: rebase
   - base: beta
     upstream: bilelmoussaoui:beta
+    mergeMethod: rebase
     assignees:
       - RogueScholar
     reviewers:
