@@ -1,11 +1,10 @@
 # Hardcode-Tray
 
-[![CircleCI](https://circleci.com/gh/bilelmoussaoui/Hardcode-Tray/tree/master.svg?style=shield)](https://circleci.com/gh/bilelmoussaoui/Hardcode-Tray/tree/master)
+[![CircleCI](https://circleci.com/gh/RogueScholar/Hardcode-Tray/tree/master.svg?style=svg)](https://circleci.com/gh/RogueScholar/Hardcode-Tray/tree/master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4d5c0768b874407bb1dcc2f928899ba5)](https://www.codacy.com/app/bil-elmoussaoui/Hardcode-Tray?utm_source=github.com&utm_medium=referral&utm_content=bil-elmoussaoui/Hardcode-Tray&utm_campaign=Badge_Grade)
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/Hardcode-Tray/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 [![Hardcode-Tray
 release](https://img.shields.io/badge/release-v4.3-blue.svg)](https://github.com/bilelmoussaoui/Hardcode-Tray/releases)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/BilalELMoussaoui)
 
 Fixes Hardcoded tray icons in Linux
 
@@ -61,13 +60,13 @@ sudo pacman -S base-devel
 Stable version:
 
 ```bash
-yaourt -S hardcode-tray
+yay -S hardcode-tray sni-qt-patched-git lib32-sni-qt-patched-git
 ```
 
 Development version:
 
 ```bash
-yaourt -S hardcode-tray-git
+yay -S hardcode-tray-git sni-qt-patched-git lib32-sni-qt-patched-git
 ```
 
 ### Ubuntu 16.04+ (PPA)
@@ -286,3 +285,14 @@ config file that points to the NwJS SDK directory.
 - [FAQ](https://github.com/bil-elmoussaoui/Hardcode-Tray/wiki/FAQ)
 - [How to contribute](https://github.com/bil-elmoussaoui/Hardcode-Tray/wiki/How-to-contribute)
 - [Supported applications](https://github.com/bil-elmoussaoui/Hardcode-Tray/wiki/Supported-applications)
+
+## Licenses
+
+This project is dual licensed. The main body of the script is licensed under
+the [GNU General Public License](LICENSE), either version 3.0 or (at your
+option) any later version. By submitting a pull request you agree to have your
+work also licensed accordingly.
+
+The [`data_pack.py`](HardcodeTray/modules/applications/helpers/data_pack.py)
+file is released under the [BSD-3-Clause License](LICENSE), in accordance with
+the wishes of its authors, the Chromium developers.

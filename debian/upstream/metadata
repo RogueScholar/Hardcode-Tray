@@ -1,0 +1,14 @@
+---
+Bug:
+  Database: "https://github.com/bilelmoussaoui/Hardcode-Tray/issues"
+  Submit: "https://github.com/bilelmoussaoui/Hardcode-Tray/issues/new"
+Changelog: "https://github.com/bilelmoussaoui/Hardcode-Tray/milestones?state=closed"
+Documentation: "https://github.com/bilelmoussaoui/Hardcode-Tray/blob/master/README.md"
+Donation: "https://www.paypal.me/BilalELMoussaoui"
+Repository: "https://github.com/bilelmoussaoui/Hardcode-Tray.git"
+Repository-Browse: "https://github.com/bilelmoussaoui/Hardcode-Tray"
+Screenshots:
+  - https://raw.githubusercontent.com/bilelmoussaoui/Hardcode-Tray/master/screenshots/papirus.png
+  - https://raw.githubusercontent.com/bilelmoussaoui/Hardcode-Tray/master/screenshots/numix.png
+Security-Contact: "Bilal Elmoussaoui <bil.elmoussaoui@gmail.com>"
+...

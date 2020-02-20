@@ -129,8 +129,7 @@ def get_gnome_scaling_factor():
         scaling_factor = gsettings.get_uint('scaling-factor') + 1
         Logger.debug("Scaling Factor/GNOME: {}".format(scaling_factor))
         return scaling_factor
-    else:
-        Logger.debug("Scaling Factor/Gnome not detected.")
+    Logger.debug("Scaling Factor/Gnome not detected.")
     return 1
 
 
