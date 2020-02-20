@@ -111,9 +111,7 @@ class Parser:
         for path in paths:
             path = Path(path, self, key)
             # Check if path exists
-            if path.exists or (
-                self.force_create_folder and key == "icons_path"
-            ):
+            if path.exists or (self.force_create_folder and key == "icons_path"):
                 getattr(self, key).append(path)
 
     def _parse_icons(self, icons):

@@ -185,7 +185,6 @@ class App:
             The icons path, specified per application.
         """
         path_ = App.get("path")
-        onlyCount = App.get.count("only")
-        if onlyCount > 1 and path_:
-            raise SystemExit("You can't use --path with more than application at once")
+        if len(App.get("only")) > 1 and path_:
+            exit(_("You can't use --path with more than application at once."))
         return path_

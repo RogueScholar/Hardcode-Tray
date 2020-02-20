@@ -19,15 +19,17 @@ You should have received a copy of the GNU General Public License
 along with Hardcode-Tray. If not, see <http://www.gnu.org/licenses/>.
 """
 from gettext import gettext as _
+
+from gi import require_version
+require_version("Gtk", "3.0")
 from gi.repository import Gtk
+
 from HardcodeTray.const import DESKTOP_ENV
 from HardcodeTray.utils import (get_gnome_scaling_factor,
                                 get_kde_scaling_factor,
                                 get_cinnamon_scaling_factor)
 from HardcodeTray.modules.log import Logger
 from HardcodeTray.modules.theme import Theme
-from gi import require_version
-require_version("Gtk", "3.0")
 
 
 class SystemConfig:
@@ -62,9 +64,7 @@ class SystemConfig:
     @staticmethod
     def theme():
         """Return a theme object."""
-        theme_name = Gtk.Settings.get_default().get_property(
-            "gtk-icon-theme-name"
-            )
+        theme_name = Gtk.Settings.get_default().get_property("gtk-icon-theme-name")
         theme = None
         if theme_name:
             Logger.debug("System/Theme: {}".format(theme_name))

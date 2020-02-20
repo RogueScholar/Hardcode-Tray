@@ -35,10 +35,8 @@ def detect_de(de_list):
         if desktop in de_list:
             Logger.debug("DE: {0}".format(desktop.title()))
             return desktop
-        if desktop == "gnome-xorg":
-            Logger.debug(
-                "DE: {0} (falling back to gnome)".format(desktop.title())
-                )
+        elif desktop == "gnome-xorg":
+            Logger.debug("DE: {0} (falling back to gnome)".format(desktop.title()))
             return "gnome"
     Logger.debug("DE not detected.")
     return "other"
