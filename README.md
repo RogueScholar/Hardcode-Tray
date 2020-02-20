@@ -4,7 +4,6 @@
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/Hardcode-Tray/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 [![Hardcode-Tray
 release](https://img.shields.io/badge/release-v4.3-blue.svg)](https://github.com/bilelmoussaoui/Hardcode-Tray/releases)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/BilalELMoussaoui)
 
 Fixes Hardcoded tray icons in Linux
 
