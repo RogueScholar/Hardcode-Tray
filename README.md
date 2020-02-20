@@ -251,8 +251,6 @@ Passing `--theme` `--conversion-tool` `--size` will overwrite those settings.
 
 In order to fix those ugly tray icons on NWJS applications, you will need to download the SDK from [here](https://nwjs.io/downloads/). Extract the zip file in your home directory (or place it wherever you want) and add a new key to the config file that points to the NwJS SDK directory.
 
-
-
 ## Credits
 
 - Modified version of `data_pack.py`, by The Chromium Authors released under a BSD-style license
@@ -265,3 +263,14 @@ In order to fix those ugly tray icons on NWJS applications, you will need to dow
 - [How to build the patched version of sni-qt](https://github.com/bil-elmoussaoui/Hardcode-Tray/wiki/How-to-build-sni-qt)
 - [How to contribute](https://github.com/bil-elmoussaoui/Hardcode-Tray/wiki/How-to-contribute)
 - [Supported applications](https://github.com/bil-elmoussaoui/Hardcode-Tray/wiki/Supported-applications)
+
+## Licenses
+
+This project is dual licensed. The main body of the script is licensed under
+the [GNU General Public License](LICENSE), either version 3.0 or (at your
+option) any later version. By submitting a pull request you agree to have your
+work also licensed accordingly.
+
+The [`data_pack.py`](HardcodeTray/modules/applications/helpers/data_pack.py)
+file is released under the [BSD-3-Clause License](LICENSE), in accordance with
+the wishes of its authors, the Chromium developers.
