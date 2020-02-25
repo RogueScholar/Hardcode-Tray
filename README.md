@@ -219,7 +219,7 @@ where the icons are stored using the `--path` argument. Only works in
 combination with the `--only` argument for a single application.
 
 ```bash
-hardcode-tray --only teams --path /opt/teams/resources/assets
+hardcode-tray --only dropbox --path /opt/dropbox-bin
 ```
 
 - `--size`
