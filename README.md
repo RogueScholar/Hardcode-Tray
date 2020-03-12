@@ -61,13 +61,13 @@ sudo pacman -S base-devel
 Stable version:
 
 ```bash
-yaourt -S hardcode-tray
+yay -S hardcode-tray
 ```
 
 Development version:
 
 ```bash
-yaourt -S hardcode-tray-git
+yay -S hardcode-tray-git
 ```
 
 ### Ubuntu 16.04+ (PPA)
