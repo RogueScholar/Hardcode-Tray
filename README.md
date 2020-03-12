@@ -1,6 +1,7 @@
 # Hardcode-Tray
+
 [![CircleCI](https://circleci.com/gh/bilelmoussaoui/Hardcode-Tray/tree/master.svg?style=shield)](https://circleci.com/gh/bilelmoussaoui/Hardcode-Tray/tree/master)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4d5c0768b874407bb1dcc2f928899ba5)](https://www.codacy.com/app/bil-elmoussaoui/Hardcode-Tray?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bil-elmoussaoui/Hardcode-Tray&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4d5c0768b874407bb1dcc2f928899ba5)](https://www.codacy.com/app/bil-elmoussaoui/Hardcode-Tray?utm_source=github.com&utm_medium=referral&utm_content=bil-elmoussaoui/Hardcode-Tray&utm_campaign=Badge_Grade)
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/Hardcode-Tray/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 [![Hardcode-Tray
 release](https://img.shields.io/badge/release-v4.3-blue.svg)](https://github.com/bilelmoussaoui/Hardcode-Tray/releases)
@@ -8,7 +9,9 @@ release](https://img.shields.io/badge/release-v4.3-blue.svg)](https://github.com
 
 Fixes Hardcoded tray icons in Linux
 
-The script will automatically detect your default theme, the correct icon size, the hard-coded applications, the correct icons for each indicator and fix them. All that with the possibility to revert to the original icons.
+The script will automatically detect your default theme, the correct icon size,
+the hard-coded applications, the correct icons for each indicator and fix them.
+All that with the possibility to revert to the original icons.
 
 ## Themes
 
@@ -35,7 +38,10 @@ Here's a list of themes that supports Hardcode-Tray:
   - `imagemagick`
   - `svgexport`
 
-If the icons looks blury, you should try installing this package `libappindicator3-1`. See [#567](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/567) for reference.
+If the icons looks blury, you should try installing this package
+`libappindicator3-1`. See
+[#567](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/567) for
+reference.
 
 ### Building dependencies
 
@@ -88,13 +94,15 @@ sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/ho
 sudo dnf install hardcode-tray
 ```
 
-You can see all available packages [here](https://software.opensuse.org/download.html?project=home%3ASmartFinn%3Ahardcode-tray&package=hardcode-tray).
+You can see all available packages
+[here](https://software.opensuse.org/download.html?project=home%3ASmartFinn%3Ahardcode-tray&package=hardcode-tray).
 
 ### Manual installation
 
 1- Install dependencies
 
 #### On Ubuntu:
+
 ```bash
 sudo apt install git build-essential meson libgirepository1.0-dev libgtk-3-dev python3 python3-gi gir1.2-rsvg-2.0 librsvg2-bin gir1.2-gtk-3.0
 ```
@@ -119,7 +127,8 @@ sudo -E hardcode-tray
 
 - `--apply` and `--revert`
 
-Hardcode-Tray shows a welcome message by default and asks the user to choose between applying the fix or reverting it. You can hide that using
+Hardcode-Tray shows a welcome message by default and asks the user to choose
+between applying the fix or reverting it. You can hide that using
 
 ```bash
 hardcode-tray --apply
@@ -133,7 +142,8 @@ hardcode-tray --revert
 
 - `--change-color`
 
-Your favorite theme does not provide icons for all those hardcoded icons? Just use a different theme and change the colors using Hardcode-Tray.
+Your favorite theme does not provide icons for all those hardcoded icons? Just
+use a different theme and change the colors using Hardcode-Tray.
 
 ```bash
 hardcode-tray --change-color "#FIRSTCOLOR #REPLACE_FIRST_COLOR" "#SECONDCOLOR #REPLACE_SECOND_COLOR"...
@@ -149,19 +159,27 @@ hardcode-tray --clear-cache
 
 - `--conversion-tool`
 
-Hardcode-Tray by default detects if the user has either Inkscape, CairoSVG, RSVGConvert, ImageMagick or SVGExport installed and use one of them to convert SVG icons to PNG. In order to choose the tool to use if one of them is broken in your installation is
+Hardcode-Tray by default detects if the user has either Inkscape, CairoSVG,
+RSVGConvert, ImageMagick or SVGExport installed and use one of them to convert
+SVG icons to PNG. In order to choose the tool to use if one of them is broken in
+your installation is
 
 ```bash
 hardcode-tray --conversion-tool {Inkscape, CairoSVG, RSVGConvert, ImageMagick, SVGExport}
 ```
 
-For now, we support : CairoSVG (python3-cairosvg), Inkscape, rsvgconvert (librsvg), Imagemagick and svgexport(npm library)
+For now, we support : CairoSVG (python3-cairosvg), Inkscape, rsvgconvert
+(librsvg), Imagemagick and svgexport(npm library)
 
-Cairo has some issues with converting SVG files that use CSS (see [#245](https://github.com/bil-elmoussaoui/Hardcode-Tray/issues/245)).
+Cairo has some issues with converting SVG files that use CSS (see
+[#245](https://github.com/bil-elmoussaoui/Hardcode-Tray/issues/245)).
 
 - `--light-theme` and `--dark-theme`
 
-Some applications provide dark and light tray icons with the possibility to modify them using their UI. In order to use a dark theme for dark icons and a light one for light icons, you can use those two arguments. It only works if you use both of them at the same time.
+Some applications provide dark and light tray icons with the possibility to
+modify them using their UI. In order to use a dark theme for dark icons and a
+light one for light icons, you can use those two arguments. It only works if you
+use both of them at the same time.
 
 ```bash
 hardcode-tray --dark-theme Numix-light --light-theme Numix
@@ -169,17 +187,22 @@ hardcode-tray --dark-theme Numix-light --light-theme Numix
 
 - `--only`
 
-You can use the `--only` argument to fix/revert only one application; don't use the argument if you want to fix all applications your icon theme supports.
+You can use the `--only` argument to fix/revert only one application; don't use
+the argument if you want to fix all applications your icon theme supports.
 
 ```bash
 hardcode-tray --only android-messages-desktop.electron, skypeforlinux
 ```
 
-In order to get the names needed to fix only specific programs, you can look at the `app_name` key in the JSON files for the program. There you can find the corresponding name for the program you want to fix.
+In order to get the names needed to fix only specific programs, you can look at
+the `app_name` key in the JSON files for the program. There you can find the
+corresponding name for the program you want to fix.
 
 - `--path`
 
-If you installed your app in a non-standard location, you can override the path where the icons are stored using the `--path` argument. Only works in combination with the `--only` argument for a single application.
+If you installed your app in a non-standard location, you can override the path
+where the icons are stored using the `--path` argument. Only works in
+combination with the `--only` argument for a single application.
 
 ```bash
 hardcode-tray --only dropbox --path /opt/dropbox-bin
@@ -187,7 +210,8 @@ hardcode-tray --only dropbox --path /opt/dropbox-bin
 
 - `--size`
 
-You can also use `--size {24,22,16}` to force the script to use a different icon size or if the script does not detect your desktop environment.
+You can also use `--size {24,22,16}` to force the script to use a different icon
+size or if the script does not detect your desktop environment.
 
 ```bash
 hardcode-tray --size 24 --only dropbox
@@ -211,27 +235,36 @@ hardcode-tray --version
 
 ## Config file
 
-Hardcode-Tray also supports a JSON config file that can be placed under `~/.config`. The file must be named `hardcode-tray.json`. An example of the config file can be found [here](https://github.com/bil-elmoussaoui/Hardcode-Tray/blob/master/data/config.json).
+Hardcode-Tray also supports a JSON config file that can be placed under
+`~/.config`. The file must be named `hardcode-tray.json`. An example of the
+config file can be found
+[here](https://github.com/bil-elmoussaoui/Hardcode-Tray/blob/master/data/config.json).
 The file supports the following options for now.
 
 - `blacklist`: a list of applications that you don't want to be fixed.
 - `conversion_tool`: the default tool to be used every time you use the script.
-- `icons` : An object, that contains `theme` and `size` for the Gtk icon theme and the icon size to be used.
-- `backup_ignore` : A boolean, to configure either you want default icons to be saved on the backup folder or not.
-- `scaling_factor` : Widgets scaling factor. Auto detected on GNOME, KDE and Cinnamon.
+- `icons` : An object, that contains `theme` and `size` for the Gtk icon theme
+  and the icon size to be used.
+- `backup_ignore` : A boolean, to configure either you want default icons to be
+  saved on the backup folder or not.
+- `scaling_factor` : Widgets scaling factor. Auto detected on GNOME, KDE and
+  Cinnamon.
 
 Passing `--theme` `--conversion-tool` `--size` will overwrite those settings.
 
 ### Node-WebKit JS applications
 
-In order to fix those ugly tray icons on NWJS applications, you will need to download the SDK from [here](https://nwjs.io/downloads/). Extract the zip file in your home directory (or place it wherever you want) and add a new key to the config file that points to the NwJS SDK directory.
-
-
+In order to fix those ugly tray icons on NWJS applications, you will need to
+download the SDK from [here](https://nwjs.io/downloads/). Extract the zip file
+in your home directory (or place it wherever you want) and add a new key to the
+config file that points to the NwJS SDK directory.
 
 ## Credits
 
-- Modified version of `data_pack.py`, by The Chromium Authors released under a BSD-style license
-- Qt applications icons name by [elementaryPlus](https://github.com/mank319/elementaryPlus) team
+- Modified version of `data_pack.py`, by The Chromium Authors released under a
+  BSD-style license
+- Qt applications icons name by
+  [elementaryPlus](https://github.com/mank319/elementaryPlus) team
 
 ## Hardcode-Tray wiki
 
