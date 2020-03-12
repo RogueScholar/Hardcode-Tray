@@ -1,10 +1,12 @@
 {
     "name": "Keybase",
     "app_path": [
-        "/opt/keybase/"
+        "/opt/keybase/",
+        "/usr/share/keybase-app/"
     ],
     "icons_path": [
-        "/opt/keybase/resources/app/images/menubarIcon/"
+        "/opt/keybase/resources/app/images/menubarIcon/",
+        "/usr/share/keybase-app/images/menubarIcon/"
     ],
     "icons": {
         "regular-dark": {

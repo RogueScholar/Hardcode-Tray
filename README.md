@@ -16,38 +16,37 @@ All that with the possibility to revert to the original icons.
 
 Here's a list of themes that supports Hardcode-Tray:
 
-- [Numix icon theme](https://github.com/numixproject/numix-icon-theme)
-
- <div align="center"><img src="screenshots/numix.png" alt="Preview" /></div>
-
-- [Papirus icon theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
-
- <div align="center"><img src="screenshots/papirus.png" alt="Preview" /></div>
+ - [Numix icon theme](https://github.com/numixproject/numix-icon-theme)
+   <div align="center"><img src="screenshots/numix.png" alt="Preview" /></div>
+ - [Papirus icon theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+   <div align="center"><img src="screenshots/papirus.png" alt="Preview" /></div>
 
 ## Requirements
 
 ### Running dependencies
 
-- `python3`
-- `python3-gi`
-- Pick up your favorite conversion tool
-  - `python3-cairosvg`
-  - `librsvg`
-  - `inkscape`
-  - `imagemagick`
-  - `svgexport`
+ - `python3`
+ - `python3-gi`
+ - Pick up your favorite conversion tool:
+   - `python3-cairosvg`
+   - `librsvg`
+   - `inkscape`
+   - `imagemagick`
+   - `svgexport`
 
 If the icons looks blury, you should try installing this package
 `libappindicator3-1`. See
 [#567](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/567) for
-reference.
+more information.
 
 ### Building dependencies
 
-- `ninja`
-- `meson (>= 0.40)`
+ - `ninja`
+ - `meson (>= 0.40)`
 
 ## Install
+
+You can see all available packages [here](https://software.opensuse.org/download.html?project=home%3ASmartFinn%3Ahardcode-tray&package=hardcode-tray).
 
 ### Arch Linux (AUR)
 
@@ -60,191 +59,155 @@ sudo pacman -S base-devel
 Stable version:
 
 ```bash
-yay -S hardcode-tray sni-qt-patched-git lib32-sni-qt-patched-git
+yay -S hardcode-tray
 ```
 
 Development version:
 
 ```bash
-yay -S hardcode-tray-git sni-qt-patched-git lib32-sni-qt-patched-git
+yay -S hardcode-tray-git
 ```
 
 ### Ubuntu 16.04+ (PPA)
 
 ```bash
-sudo add-apt-repository ppa:papirus/hardcode-tray
-sudo apt update
+sudo add-apt-repository -yu ppa:papirus/hardcode-tray
 sudo apt install hardcode-tray
 ```
 
-### Debian 10
+### Debian 10+
 
 ```bash
-sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/SmartFinn:/hardcode-tray/openSUSE_Tools_Debian_10/ /' > /etc/apt/sources.list.d/hardcode-tray.list"
-wget -qO- https://download.opensuse.org/repositories/home:SmartFinn:hardcode-tray/openSUSE_Tools_Debian_10/Release.key | sudo apt-key add -
-sudo apt-get update
-sudo apt-get install hardcode-tray
+echo 'deb http://download.opensuse.org/repositories/home:/SmartFinn:/hardcode-tray/Debian_$(lsb_release -rs)/ /' | sudo tee /etc/apt/sources.list.d/hardcode-tray.list
+wget -qO- https://download.opensuse.org/repositories/home:SmartFinn:hardcode-tray/Debian_$(lsb_release -rs)/Release.key | sudo apt-key add -
+sudo apt update && sudo apt install hardcode-tray
 ```
 
-### Fedora 29+ / Fedora Rawhide
-
-To install hardcode-tray on Fedora 30 run the following commands:
+### Fedora 30+ / Fedora Rawhide
 
 ```bash
-sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:SmartFinn:hardcode-tray/openSUSE_Tools_Fedora_30/home:SmartFinn:hardcode-tray.repo
+sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:SmartFinn:hardcode-tray/Fedora_$(rpm -E %fedora)/home:SmartFinn:hardcode-tray.repo
 sudo dnf install hardcode-tray
 ```
 
-You can find packages for other Fedora versions
-[here](https://software.opensuse.org/download.html?project=home%3ASmartFinn%3Ahardcode-tray&package=hardcode-tray).
-
-### OpenSUSE (Leap 42.2 / Tumbleweed)
-
-You can use unofficial build
-
-```bash
-sudo zypper ar -p 98 http://download.opensuse.org/repositories/home:/GNorth:/Arc_and_Papirus/openSUSE_Leap_42.3/home:GNorth:Arc_and_Papirus.repo
-sudo zypper ref
-sudo zypper in Hardcode-Tray
-```
-
-Where openSUSE Leap 42.3 can be changed to 42.2 or Tumbleweed
-
 ### Manual installation
 
-1- Install dependencies
-
-#### On Ubuntu:
-
-```bash
-sudo apt install git build-essential meson libgirepository1.0-dev libgtk-3-dev python3 python3-gi gir1.2-rsvg-2.0 librsvg2-bin gir1.2-gtk-3.0
-```
-
-2- Compile
-
-```bash
-git clone https://github.com/bil-elmoussaoui/Hardcode-Tray
-meson builddir --prefix=/usr
-sudo ninja -C builddir install
-```
-
-3- Open Hardcode-Tray using this command
-
-```bash
-sudo -E hardcode-tray
-```
-
-4- Enjoy!
+ 1. Install dependencies
+    _On Ubuntu:_
+    ```bash
+    sudo apt install git build-essential meson libgirepository1.0-dev libgtk-3-dev python3 python3-gi gir1.2-rsvg-2.0 librsvg2-bin gir1.2-gtk-3.0
+    ```
+ 1. Compile
+    ```bash
+    git clone https://github.com/bil-elmoussaoui/Hardcode-Tray
+    meson builddir --prefix=/usr
+    sudo ninja -C builddir install
+    ```
+ 1. Open Hardcode-Tray using this command
+    ```bash
+    sudo -E hardcode-tray
+    ```
+ 1. Enjoy!
 
 ## Options
 
-- `--apply` and `--revert`
+ - `--apply` and `--revert`
+   Hardcode-Tray shows a welcome message by default and asks the user to choose
+   between applying the fix or reverting it. You can hide that using
 
-Hardcode-Tray shows a welcome message by default and asks the user to choose
-between applying the fix or reverting it. You can hide that using
+   ```bash
+   sudo -E hardcode-tray --apply
+   ```
 
-```bash
-hardcode-tray --apply
-```
+   or
 
-or
+   ```bash
+   sudo -E hardcode-tray --revert
+   ```
 
-```bash
-hardcode-tray --revert
-```
+ - `--change-color`
+   Your favorite theme does not provide icons for all those hardcoded icons? Just
+   use a different theme and change the colors using Hardcode-Tray.
 
-- `--change-color`
+   ```bash
+   sudo -E hardcode-tray --change-color "#FIRSTCOLOR #REPLACE_FIRST_COLOR" "#SECONDCOLOR #REPLACE_SECOND_COLOR"...
+   ```
 
-Your favorite theme does not provide icons for all those hardcoded icons? Just
-use a different theme and change the colors using Hardcode-Tray.
+ - `--clear-cache`
+   Lets you clear the backup cache folder
 
-```bash
-hardcode-tray --change-color "#FIRSTCOLOR #REPLACE_FIRST_COLOR" "#SECONDCOLOR #REPLACE_SECOND_COLOR"...
-```
+   ```bash
+   sudo -E hardcode-tray --clear-cache
+   ```
 
-- `--clear-cache`
+ - `--conversion-tool`
+   Hardcode-Tray by default detects if the user has either Inkscape, CairoSVG,
+   RSVGConvert, ImageMagick or SVGExport installed and use one of them to convert
+   SVG icons to PNG. In order to choose the tool to use if one of them is broken in
+   your installation is
 
-Let you clear the backup cache folder
+   ```bash
+   sudo -E hardcode-tray --conversion-tool {Inkscape, CairoSVG, RSVGConvert, ImageMagick, SVGExport}
+   ```
 
-```bash
-hardcode-tray --clear-cache
-```
+   For now, we support : CairoSVG (python3-cairosvg), Inkscape, rsvgconvert
+   (librsvg), Imagemagick and svgexport(npm library)
 
-- `--conversion-tool`
+   Cairo has some issues with converting SVG files that use CSS (see
+   [#245](https://github.com/bil-elmoussaoui/Hardcode-Tray/issues/245)).
 
-Hardcode-Tray by default detects if the user has either Inkscape, CairoSVG,
-RSVGConvert, ImageMagick or SVGExport installed and use one of them to convert
-SVG icons to PNG. In order to choose the tool to use if one of them is broken in
-your installation is
+ - `--light-theme` and `--dark-theme`
+   Some applications provide dark and light tray icons with the possibility to
+   modify them using their UI. In order to use a dark theme for dark icons and a
+   light one for light icons, you can use those two arguments. It only works if you
+   use both of them at the same time.
 
-```bash
-hardcode-tray --conversion-tool {Inkscape, CairoSVG, RSVGConvert, ImageMagick, SVGExport}
-```
+   ```bash
+   sudo -E hardcode-tray --dark-theme Numix-light --light-theme Numix
+   ```
 
-For now, we support : CairoSVG (python3-cairosvg), Inkscape, rsvgconvert
-(librsvg), Imagemagick and svgexport(npm library)
+ - `--only`
+   You can use the `--only` argument to fix/revert only one application; don't use
+   the argument if you want to fix all applications your icon theme supports.
 
-Cairo has some issues with converting SVG files that use CSS (see
-[#245](https://github.com/bil-elmoussaoui/Hardcode-Tray/issues/245)).
+   ```bash
+   sudo -E hardcode-tray --only android-messages-desktop.electron, skypeforlinux
+   ```
 
-- `--light-theme` and `--dark-theme`
+   In order to get the names needed to fix only specific programs, you can look at
+   the `app_name` key in the JSON files for the program. There you can find the
+   corresponding name for the program you want to fix.
 
-Some applications provide dark and light tray icons with the possibility to
-modify them using their UI. In order to use a dark theme for dark icons and a
-light one for light icons, you can use those two arguments. It only works if you
-use both of them at the same time.
+ - `--path`
+   If you installed your app in a non-standard location, you can override the path
+   where the icons are stored using the `--path` argument. Only works in
+   combination with the `--only` argument for a single application.
 
-```bash
-hardcode-tray --dark-theme Numix-light --light-theme Numix
-```
+   ```bash
+   sudo -E hardcode-tray --only dropbox --path /opt/dropbox-bin
+   ```
 
-- `--only`
+ - `--size`
+   You can also use `--size {24,22,16}` to force the script to use a different icon
+   size or if the script does not detect your desktop environment.
 
-You can use the `--only` argument to fix/revert only one application; don't use
-the argument if you want to fix all applications your icon theme supports.
+   ```bash
+   sudo -E hardcode-tray --size 24 --only dropbox
+   ```
 
-```bash
-hardcode-tray --only android-messages-desktop.electron, skypeforlinux
-```
+ - `--theme`
+   You can fix your hardcoded icons using a different theme than the default one.
 
-In order to get the names needed to fix only specific programs, you can look at
-the `app_name` key in the JSON files for the program. There you can find the
-corresponding name for the program you want to fix.
+   ```bash
+   sudo -E hardcode-tray --theme Numix --only dropbox
+   ```
 
-- `--path`
+ - `--version`
+   You can print the version of Hardcode-Tray using
 
-If you installed your app in a non-standard location, you can override the path
-where the icons are stored using the `--path` argument. Only works in
-combination with the `--only` argument for a single application.
-
-```bash
-hardcode-tray --only teams --path /opt/teams/resources/assets
-```
-
-- `--size`
-
-You can also use `--size {24,22,16}` to force the script to use a different icon
-size or if the script does not detect your desktop environment.
-
-```bash
-hardcode-tray --size 24 --only dropbox
-```
-
-- `--theme`
-
-You can fix your hardcoded icons using a different theme than the default one.
-
-```bash
-hardcode-tray --theme Numix --only dropbox
-```
-
-- `--version`
-
-You can print the version of Hardcode-Tray using
-
-```bash
-hardcode-tray --version
-```
+   ```bash
+   sudo -E hardcode-tray --version
+   ```
 
 ## Config file
 
@@ -254,14 +217,14 @@ config file can be found
 [here](https://github.com/bil-elmoussaoui/Hardcode-Tray/blob/master/data/config.json).
 The file supports the following options for now.
 
-- `blacklist`: a list of applications that you don't want to be fixed.
-- `conversion_tool`: the default tool to be used every time you use the script.
-- `icons` : An object, that contains `theme` and `size` for the Gtk icon theme
-  and the icon size to be used.
-- `backup_ignore` : A boolean, to configure either you want default icons to be
-  saved on the backup folder or not.
-- `scaling_factor` : Widgets scaling factor. Auto detected on GNOME, KDE and
-  Cinnamon.
+ - `blacklist`: a list of applications that you don't want to be fixed.
+ - `conversion_tool`: the default tool to be used every time you use the script.
+ - `icons` : An object, that contains `theme` and `size` for the Gtk icon theme
+   and the icon size to be used.
+ - `backup_ignore` : A boolean, to configure either you want default icons to be
+   saved on the backup folder or not.
+ - `scaling_factor` : Widgets scaling factor. Auto detected on GNOME, KDE and
+   Cinnamon.
 
 Passing `--theme` `--conversion-tool` `--size` will overwrite those settings.
 
@@ -274,17 +237,17 @@ config file that points to the NwJS SDK directory.
 
 ## Credits
 
-- Modified version of `data_pack.py`, by The Chromium Authors released under a
-  BSD-style license
-- Qt applications icons name by
-  [elementaryPlus](https://github.com/mank319/elementaryPlus) team
+ - Modified version of `data_pack.py`, by The Chromium Authors released under a
+   BSD-style license
+ - Qt applications icons name by
+   [elementaryPlus](https://github.com/mank319/elementaryPlus) team
 
 ## Hardcode-Tray wiki
 
-- [Changelog](https://github.com/bil-elmoussaoui/Hardcode-Tray/wiki/Changelog)
-- [FAQ](https://github.com/bil-elmoussaoui/Hardcode-Tray/wiki/FAQ)
-- [How to contribute](https://github.com/bil-elmoussaoui/Hardcode-Tray/wiki/How-to-contribute)
-- [Supported applications](https://github.com/bil-elmoussaoui/Hardcode-Tray/wiki/Supported-applications)
+ - [Changelog](https://github.com/bil-elmoussaoui/Hardcode-Tray/wiki/Changelog)
+ - [FAQ](https://github.com/bil-elmoussaoui/Hardcode-Tray/wiki/FAQ)
+ - [How to contribute](https://github.com/bil-elmoussaoui/Hardcode-Tray/wiki/How-to-contribute)
+ - [Supported applications](https://github.com/bil-elmoussaoui/Hardcode-Tray/wiki/Supported-applications)
 
 ## Licenses
 
