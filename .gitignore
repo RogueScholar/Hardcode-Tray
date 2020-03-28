@@ -67,3 +67,4 @@ HardcodeTray/const.py
 # Sublime Text 3
 *.sublime-project
 *.sublime-workspace
+*.kateproject

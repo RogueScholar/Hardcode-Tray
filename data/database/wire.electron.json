@@ -16,11 +16,11 @@
     "script": "electron",
     "icons": {
         "tray": {
-            "original": "app/img/tray-icon/tray/tray.png",
+            "original": "electron/img/tray-icon/tray/tray.png",
             "theme": "wire-tray"
         },
         "notification": {
-            "original": "app/img/tray-icon/tray-with-badge/tray.badge.png",
+            "original": "electron/img/tray-icon/tray-with-badge/tray.badge.png",
             "theme": "wire-tray-attention"
         }
     }
