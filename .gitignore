@@ -5,66 +5,87 @@ __pycache__/
 # C extensions
 *.so
 
+# CudaText project files are user-specific
+*.cuda-proj
+
 # Distribution / packaging
-.Python
-env/
+*.egg-info/
 build/
 builddir/
 develop-eggs/
 dist/
 downloads/
 eggs/
-.eggs/
+env/
 lib/
 lib64/
 parts/
 sdist/
 var/
-*.egg-info/
-.installed.cfg
+.eggs/
 *.egg
+.Python
+.installed.cfg
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+# Django
+*.log
 
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*,cover
-
-# Translations
-*.mo
-
-# Django stuff:
-*.log
-
-# Sphinx documentation
-docs/_build/
+# Kate
+*.kateproject
+.*.kate-swp
+.swp.*
 
 # PyBuilder
 target/
 
-.idea/
+# PyInstaller
+*.manifest
+*.spec
 
-tags
+# Sphinx documentation
+docs/_build/
 
-.vscode/
-hardcode-tray
-HardcodeTray/const.py
-
-# Sublime Text 3
+# Sublime Text
+## Project/workspace files are user-specific
 *.sublime-project
 *.sublime-workspace
-*.kateproject
+## Sublime-GitHub package stores user's GitHub tokens here
+GitHub.sublime-settings
+## SFTP configuration/credentials file
+sftp-config.json
+## Cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+# Translations
+*.mo
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage.*
+*.cover
+.cache
+.coverage
+coverage.xml
+nosetests.xml
+
+# Visual Studio Code
+.vscode/*
+## All but four files are installation-specific
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Miscellaneous
+.idea/
+tags
+
+# Don't accidentally publish your GPG secret keyring
+secring.*

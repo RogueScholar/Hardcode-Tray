@@ -1,0 +1,35 @@
+{
+  "name": "KVIrc",
+    "app_path": [
+      "/usr/share/kvirc"
+    ],
+    "icons_path": [
+        "/usr/share/kvirc/5.0/pics/"
+    ],
+    "icons": {
+      "dock-normal": {
+        "original": "kvi_dock_normal_22-0.png",
+        "theme": "kvirc-tray-normal"
+      },
+      "dock-normal@2x": {
+        "original": "kvi_dock_normal_48-0.png",
+        "theme": "kvirc-tray-normal"
+      },
+      "dock-badged": {
+        "original": "kvi_dock_normal_22-1.png",
+        "theme": "kvirc-tray-badged"
+      },
+      "dock-badged@2x": {
+        "original": "kvi_dock_normal_48-1.png",
+        "theme": "kvirc-tray-badged"
+      },
+      "dock-flashing": {
+        "original": "kvi_dock_normal_22-2.png",
+        "theme": "kvirc-tray-flashing"
+      },
+      "dock-flashing@2x": {
+        "original": "kvi_dock_normal_48-2.png",
+        "theme": "kvirc-tray-flashing"
+      }
+    }
+}

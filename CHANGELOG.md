@@ -1,62 +1,117 @@
-# Change Log
+# Changelog #
 
-## [Unreleased](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/HEAD)
+## [Unreleased](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/HEAD) ##
 
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v4.3...HEAD)
 
-**Implemented enhancements:**
+### Implemented enhancements ###
 
--  Ao support [\#516](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/516)
+- AppImage support bilelmoussaoui/Hardcode-Tray#608
+- Wicd support bilelmoussaoui/Hardcode-Tray#599
+- google-chrome and chromium after update doesn't work anymore bilelmoussaoui/Hardcode-Tray#597
+- teams-for-linux support bilelmoussaoui/Hardcode-Tray#595
+- manual installation Git-version on Ubuntu 18.04 bilelmoussaoui/Hardcode-Tray#543
+- The tray icon of insync and mailspring has not been replaced. bilelmoussaoui/Hardcode-Tray#535
+- Ao support bilelmoussaoui/Hardcode-Tray#516
+- Update YakYak support bilelmoussaoui/Hardcode-Tray#511
+- Flameshot support bilelmoussaoui/Hardcode-Tray#506
+- Tartube support bilelmoussaoui/Hardcode-Tray#624
+- Keybase support bilelmoussaoui/Hardcode-Tray#623
+- Vk-messenger support bilelmoussaoui/Hardcode-Tray#609
+- VeraCrypt support bilelmoussaoui/Hardcode-Tray#551
+- IrcCloud support bilelmoussaoui/Hardcode-Tray#523
 
-**Fixed bugs:**
+### Fixed bugs ###
 
-- Rambox Javascript Error [\#401](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/401)
-- ownCloud Not Being Fixed [\#226](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/226)
+- New slack.js.json crashing whole app bilelmoussaoui/Hardcode-Tray#606
+- Rambox Javascript Error bilelmoussaoui/Hardcode-Tray#401
+- ownCloud not being fixed bilelmoussaoui/Hardcode-Tray#226
 
-**Closed issues:**
+### Closed issues ###
 
-- Onboard [\#584](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/584)
-- Telegram [\#581](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/581)
-- Add ElectronMail support [\#577](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/577)
-- update Telegram [\#569](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/569)
-- skypeforlinux - new tray icons [\#554](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/554)
-- Megasync, Private Internet Access support [\#549](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/549)
-- Support for bitwarden [\#541](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/541)
-- GoldenDict support [\#538](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/538)
-- Riot/Riot Web support [\#525](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/525)
-- pCloud support [\#524](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/524)
-- IrcCloud support [\#523](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/523)
+- Electron apps like Bitwarden and Android Messages Desktop not detected bilelmoussaoui/Hardcode-Tray#620
+- Telegram-desktop 1.9.12 custom icon no longer working bilelmoussaoui/Hardcode-Tray#617
+- Feature request - unread count badge for Telegram bilelmoussaoui/Hardcode-Tray#615
+- I have installed numix theme but it says "Theme Numix Light does not exists." bilelmoussaoui/Hardcode-Tray#614
+- Nextcloud desktop sync status indicator bilelmoussaoui/Hardcode-Tray#613
+- Can't find lib32-sni-qt-patched-git in yay bilelmoussaoui/Hardcode-Tray#610
+- Error on Fedora bilelmoussaoui/Hardcode-Tray#603
+- Whatsdesk support bilelmoussaoui/Hardcode-Tray#598
+- Nutstore support bilelmoussaoui/Hardcode-Tray#591
+- Rambox-OS support bilelmoussaoui/Hardcode-Tray#589
+- Onboard bilelmoussaoui/Hardcode-Tray#584
+- Telegram bilelmoussaoui/Hardcode-Tray#581
+- Flameshot icon fails to be fixed bilelmoussaoui/Hardcode-Tray#580
+- Add ElectronMail support bilelmoussaoui/Hardcode-Tray#577
+- Doesn't work at all here bilelmoussaoui/Hardcode-Tray#572
+- Fresh Git-version not working bilelmoussaoui/Hardcode-Tray#570
+- Update Telegram bilelmoussaoui/Hardcode-Tray#569
+- skypeforlinux icon is blurry bilelmoussaoui/Hardcode-Tray#567
+- Icons small and blurry in KDE Plasma with 4K monitor bilelmoussaoui/Hardcode-Tray#566
+- Hardcode-Tray does not change icons and makes Franz icon invisible  bilelmoussaoui/Hardcode-Tray#564
+- What is the Hardcode-Tray license? bilelmoussaoui/Hardcode-Tray#560
+- Rambox (Snap package) not detected bilelmoussaoui/Hardcode-Tray#557
+- skypeforlinux - new tray icons bilelmoussaoui/Hardcode-Tray#554
+- Megasync, Private Internet Access support bilelmoussaoui/Hardcode-Tray#549
+- AnyDesk support bilelmoussaoui/Hardcode-Tray#548
+- Bitwarden support bilelmoussaoui/Hardcode-Tray#541
+- uGet support bilelmoussaoui/Hardcode-Tray#539
+- GoldenDict support bilelmoussaoui/Hardcode-Tray#538
+- \[Icon Request\] Redshift GTK bilelmoussaoui/Hardcode-Tray#537
+- Wire-Desktop not being detected bilelmoussaoui/Hardcode-Tray#536
+- Icon try size bilelmoussaoui/Hardcode-Tray#534
+- not fixing VLC icon bilelmoussaoui/Hardcode-Tray#528
+- Riot/Riot Web support bilelmoussaoui/Hardcode-Tray#525
+- pCloud support bilelmoussaoui/Hardcode-Tray#524
+- No PPA for Ubuntu 17.10 Artful bilelmoussaoui/Hardcode-Tray#522
+- Ubuntu 18.04 PPA support bilelmoussaoui/Hardcode-Tray#518
+- Does not show any icon. Ubuntu 18.04 beta 2 bilelmoussaoui/Hardcode-Tray#515
+- line 120 exception bilelmoussaoui/Hardcode-Tray#514
+- FileNotFoundError: \[Errno 2\] No such file or directory: '/tmp/tmprt19wbn7' bilelmoussaoui/Hardcode-Tray#513
+- Some icons remain the same after applying hardcode-tray bilelmoussaoui/Hardcode-Tray#512
+- ModuleNotFoundError: No module named 'gi' bilelmoussaoui/Hardcode-Tray#509
 
-**Merged pull requests:**
+### Merged pull requests ###
 
-- MineTime support [\#587](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/587) ([varlesh](https://github.com/varlesh))
-- Slack icons linux update [\#586](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/586) ([flops](https://github.com/flops))
-- Update Franz 5.1.0 [\#585](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/585) ([varlesh](https://github.com/varlesh))
-- skypeforlinux newIcons support [\#582](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/582) ([flops](https://github.com/flops))
-- update Mullvad [\#579](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/579) ([varlesh](https://github.com/varlesh))
-- Support Yate Client & ElectronMail [\#576](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/576) ([varlesh](https://github.com/varlesh))
-- Reincarnation of daily builds PPA [\#575](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/575) ([SmartFinn](https://github.com/SmartFinn))
-- Update database file for wire-desktop \(Electron\) [\#574](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/574) ([RogueScholar](https://github.com/RogueScholar))
-- Support Guitarix [\#573](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/573) ([varlesh](https://github.com/varlesh))
-- Update odrive.electron.json [\#571](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/571) ([varlesh](https://github.com/varlesh))
-- support OpenDrive [\#568](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/568) ([varlesh](https://github.com/varlesh))
-- Update GPL license text [\#561](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/561) ([Pixeliz3d](https://github.com/Pixeliz3d))
-- fix telegram icons [\#559](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/559) ([iwex](https://github.com/iwex))
-- Added support Kaku \(electron app\) [\#558](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/558) ([varlesh](https://github.com/varlesh))
-- Add Skypeforlinux 8.33 away tray icons [\#555](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/555) ([drakkar1969](https://github.com/drakkar1969))
-- Make the example config more visible [\#552](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/552) ([merlinschumacher](https://github.com/merlinschumacher))
-- QJoyPad support & Vivaldi 1.15 [\#547](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/547) ([varlesh](https://github.com/varlesh))
-- Added Dutch translation [\#546](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/546) ([Vistaus](https://github.com/Vistaus))
-- Ao support \#516 [\#545](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/545) ([varlesh](https://github.com/varlesh))
-- IRCCloud support \#523 [\#544](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/544) ([varlesh](https://github.com/varlesh))
-- support Bitwarden \#541 [\#542](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/542) ([varlesh](https://github.com/varlesh))
-- added support Chrome/Chromium 68, pCloud Drive, Museeks [\#540](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/540) ([varlesh](https://github.com/varlesh))
-- RuTracker Proxy support [\#532](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/532) ([varlesh](https://github.com/varlesh))
-- add Riot support \#525 [\#526](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/526) ([varlesh](https://github.com/varlesh))
-- update yakyak database [\#517](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/517) ([bilelmoussaoui](https://github.com/bilelmoussaoui))
-- Update hexchat.json [\#510](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/510) ([abouvier](https://github.com/abouvier))
+- Update repos for Debian/Fedora, delete repo for openSUSE bilelmoussaoui/Hardcode-Tray#622 (@SmartFinn)
+- Correct typos in hardcode-tray.1 bilelmoussaoui/Hardcode-Tray#618 (@felixonmars)
+- Add Motrix (AUR version) bilelmoussaoui/Hardcode-Tray#616 (@KspLite)
+- Update wire.json bilelmoussaoui/Hardcode-Tray#612 (@rauldipeas)
+- Update wire.json bilelmoussaoui/Hardcode-Tray#611 (@rauldipeas)
+- Add repositories with daily builds for Fedora 29+/Rawhide, Debian 10 bilelmoussaoui/Hardcode-Tray#602 (@SmartFinn)
+- Add gnome-xorg to the DE list bilelmoussaoui/Hardcode-Tray#594 (@terencode)
+- WhatsDesk support bilelmoussaoui/Hardcode-Tray#593 (@varlesh)
+- Nutstore support bilelmoussaoui/Hardcode-Tray#592 (@varlesh)
+- wewechat support bilelmoussaoui/Hardcode-Tray#590 (@9n)
+- MineTime support bilelmoussaoui/Hardcode-Tray#587 (@varlesh)
+- Slack icons linux update bilelmoussaoui/Hardcode-Tray#586 (@flops)
+- Update Franz 5.1.0 bilelmoussaoui/Hardcode-Tray#585 (@varlesh)
+- skypeforlinux new icons support bilelmoussaoui/Hardcode-Tray#582 (@flops)
+- Update Mullvad bilelmoussaoui/Hardcode-Tray#579 (@varlesh)
+- Support Yate Client & ElectronMail bilelmoussaoui/Hardcode-Tray#576 (@varlesh)
+- Reincarnation of daily builds PPA bilelmoussaoui/Hardcode-Tray#575 (@SmartFinn)
+- Update database file for wire-desktop (Electron) bilelmoussaoui/Hardcode-Tray#574 (@RogueScholar)
+- Support Guitarix bilelmoussaoui/Hardcode-Tray#573 (@varlesh)
+- Update odrive.electron.json bilelmoussaoui/Hardcode-Tray#571 (@varlesh)
+- Support OpenDrive bilelmoussaoui/Hardcode-Tray#568 (@varlesh)
+- Update GPL license text bilelmoussaoui/Hardcode-Tray#561 (@Pixeliz3d)
+- Fix Telegram icons bilelmoussaoui/Hardcode-Tray#559 (@iwex)
+- Add Kaku (Electron app) support bilelmoussaoui/Hardcode-Tray#558 (@varlesh)
+- Add Skypeforlinux 8.33 away icons bilelmoussaoui/Hardcode-Tray#555 (@drakkar1969)
+- Make the example config more visible bilelmoussaoui/Hardcode-Tray#552 (@merlinschumacher)
+- QJoyPad support & Vivaldi 1.15 bilelmoussaoui/Hardcode-Tray#547 (@varlesh)
+- Add Dutch translation bilelmoussaoui/Hardcode-Tray#546 (@Vistaus)
+- Ao support bilelmoussaoui/Hardcode-Tray#545 (@varlesh)
+- IRCCloud support bilelmoussaoui/Hardcode-Tray#544 (@varlesh)
+- Bitwarden support bilelmoussaoui/Hardcode-Tray#542 (@varlesh)
+- Add support for Chrome/Chromium 68, pCloud Drive, Museeks bilelmoussaoui/Hardcode-Tray#540 (@varlesh)
+- RuTracker Proxy support bilelmoussaoui/Hardcode-Tray#532 (@varlesh)
+- Add Riot support bilelmoussaoui/Hardcode-Tray#526 (@varlesh)
+- Update yakyak database file bilelmoussaoui/Hardcode-Tray#517 (@bilelmoussaoui)
+- Update hexchat.json bilelmoussaoui/Hardcode-Tray#510 (@abouvier)
 
 ## [v4.3](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v4.3) (2018-02-22)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v4.2...v4.3)
 
 **Implemented enhancements:**
@@ -91,6 +146,7 @@
 - add whatsapp-desktop 0.4.2+ support [\#479](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/479) ([bilelmoussaoui](https://github.com/bilelmoussaoui))
 
 ## [v4.2](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v4.2) (2017-12-20)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v4.1...v4.2)
 
 **Implemented enhancements:**
@@ -151,7 +207,7 @@
 - add Tusk support [\#474](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/474) ([bilelmoussaoui](https://github.com/bilelmoussaoui))
 - Fixes \#466 [\#471](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/471) ([bilelmoussaoui](https://github.com/bilelmoussaoui))
 - RocketChat support [\#469](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/469) ([varlesh](https://github.com/varlesh))
-- Updated Discord support [\#465](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/465) ([Ancovens](https://github.com/Ancovens))
+- Updated Discord support [\#465](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/465) ([ancovens](https://github.com/ancovens))
 - add ProtonMail support [\#461](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/461) ([bilelmoussaoui](https://github.com/bilelmoussaoui))
 - Adding `base-devel` to installation instructions [\#452](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/452) ([jnsdrtlf](https://github.com/jnsdrtlf))
 - Create mailspring.json [\#450](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/450) ([bilelmoussaoui](https://github.com/bilelmoussaoui))
@@ -170,6 +226,7 @@
 - Update ru.po [\#395](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/395) ([Jacobtey](https://github.com/Jacobtey))
 
 ## [v4.1](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v4.1) (2017-06-24)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v4.0...v4.1)
 
 **Merged pull requests:**
@@ -178,6 +235,7 @@
 - make the script 100% python [\#392](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/392) ([bilelmoussaoui](https://github.com/bilelmoussaoui))
 
 ## [v4.0](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v4.0) (2017-06-24)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.9...v4.0)
 
 **Implemented enhancements:**
@@ -206,6 +264,7 @@
 - WebTorrent Desktop fix [\#382](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/382) ([varlesh](https://github.com/varlesh))
 
 ## [v3.9](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.9) (2017-06-10)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.8.2...v3.9)
 
 **Fixed bugs:**
@@ -219,6 +278,7 @@
 - Fixes dropbox path issue [\#369](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/369) ([kmyid](https://github.com/kmyid))
 
 ## [v3.8.2](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.8.2) (2017-05-26)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.8.1...v3.8.2)
 
 **Implemented enhancements:**
@@ -236,6 +296,7 @@
 - Code refactoring [\#365](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/365) ([bilelmoussaoui](https://github.com/bilelmoussaoui))
 
 ## [v3.8.1](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.8.1) (2017-05-25)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.8...v3.8.1)
 
 **Implemented enhancements:**
@@ -247,7 +308,6 @@
 
 - Google Music Manager Icon When Paused [\#362](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/362)
 -  local variable 'conversion\_tool' referenced before assignment [\#358](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/358)
-- Crashes on Reversion [\#306](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/306)
 - Gitter desktop [\#152](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/152)
 
 **Merged pull requests:**
@@ -256,6 +316,7 @@
 - Fix typo [\#359](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/359) ([timdp](https://github.com/timdp))
 
 ## [v3.8](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.8) (2017-05-21)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.7...v3.8)
 
 **Implemented enhancements:**
@@ -282,11 +343,12 @@
 
 - V3.8 [\#355](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/355) ([bilelmoussaoui](https://github.com/bilelmoussaoui))
 - Fix issue Wire icon [\#353](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/353) ([PlugaruT](https://github.com/PlugaruT))
-- Fixes franz attention icons once and for all [\#347](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/347) ([wa4557](https://github.com/wa4557))
+- Fixes franz attention icons once and for all [\#347](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/347) ([andia89](https://github.com/andia89))
 - Update nylas.json [\#345](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/345) ([mustaqimM](https://github.com/mustaqimM))
 - Discord fixes \#342 [\#343](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/343) ([bilelmoussaoui](https://github.com/bilelmoussaoui))
 
 ## [v3.7](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.7) (2017-03-30)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.6.6...v3.7)
 
 **Implemented enhancements:**
@@ -320,12 +382,13 @@
 - add initial config file, road to 3.7 [\#338](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/338) ([bilelmoussaoui](https://github.com/bilelmoussaoui))
 - Add support for keebuntu tray icon [\#337](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/337) ([mustaqimM](https://github.com/mustaqimM))
 - Add new Telegram path [\#336](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/336) ([vayan](https://github.com/vayan))
-- Add default telegram path \(installed from ppa\) [\#332](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/332) ([igorbarkowsky](https://github.com/igorbarkowsky))
+- Add default telegram path \(installed from ppa\) [\#332](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/332) ([thedrint](https://github.com/thedrint))
 - Added support for GPMDP installed through AUR [\#331](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/331) ([hrko99](https://github.com/hrko99))
 - added support for prime indicator plus, resolves \#328 [\#329](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/329) ([MarekAG](https://github.com/MarekAG))
 - Always remove old log files [\#327](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/327) ([bilelmoussaoui](https://github.com/bilelmoussaoui))
 
 ## [v3.6.6](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.6.6) (2017-03-09)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.6.5...v3.6.6)
 
 **Implemented enhancements:**
@@ -359,6 +422,7 @@
 - Cisco AnyConnect support [\#305](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/305) ([Edgarins29](https://github.com/Edgarins29))
 
 ## [v3.6.5](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.6.5) (2017-01-14)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.6.4...v3.6.5)
 
 **Implemented enhancements:**
@@ -384,6 +448,7 @@
 - del light/dark gpmdp \#285 [\#286](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/286) ([varlesh](https://github.com/varlesh))
 
 ## [v3.6.4](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.6.4) (2017-01-06)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.6.3...v3.6.4)
 
 **Implemented enhancements:**
@@ -402,6 +467,7 @@
 - Fix "Prefer `format\(\)` over string interpolation operator" issue [\#275](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/275) ([bilelmoussaoui](https://github.com/bilelmoussaoui))
 
 ## [v3.6.3](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.6.3) (2017-01-03)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.6.2...v3.6.3)
 
 **Implemented enhancements:**
@@ -422,6 +488,7 @@
 - Fix "Prefer `format\(\)` over string interpolation operator" issue [\#272](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/272) ([bilelmoussaoui](https://github.com/bilelmoussaoui))
 
 ## [v3.6.2](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.6.2) (2016-12-30)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.6.1...v3.6.2)
 
 **Fixed bugs:**
@@ -429,9 +496,11 @@
 - \[critical\] electron apps not running [\#269](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/269)
 
 ## [v3.6.1](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.6.1) (2016-12-30)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.6...v3.6.1)
 
 ## [v3.6](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.6) (2016-12-29)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.5.2.1...v3.6)
 
 **Implemented enhancements:**
@@ -474,6 +543,7 @@
 - Minor Grammar Fix [\#224](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/224) ([Foggalong](https://github.com/Foggalong))
 
 ## [v3.5.2.1](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.5.2.1) (2016-11-23)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.5.1...v3.5.2.1)
 
 **Implemented enhancements:**
@@ -490,6 +560,7 @@
 - Fix "Prefer `format\(\)` over string interpolation operator" issue [\#219](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/219) ([bilelmoussaoui](https://github.com/bilelmoussaoui))
 
 ## [v3.5.1](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.5.1) (2016-11-15)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.5...v3.5.1)
 
 **Implemented enhancements:**
@@ -507,6 +578,7 @@
 - Wrong path install on PKGBUILD [\#203](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/203)
 
 ## [v3.5](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.5) (2016-11-14)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.4...v3.5)
 
 **Implemented enhancements:**
@@ -530,12 +602,13 @@
 
 **Merged pull requests:**
 
-- Oops! [\#204](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/204) ([wa4557](https://github.com/wa4557))
+- Oops! [\#204](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/204) ([andia89](https://github.com/andia89))
 - CSV to Json [\#201](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/201) ([bilelmoussaoui](https://github.com/bilelmoussaoui))
 - Update README [\#199](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/199) ([varlesh](https://github.com/varlesh))
 - fix readme arch packages and add aur instructions [\#194](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/194) ([edgard](https://github.com/edgard))
 
 ## [v3.4](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.4) (2016-11-03)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.3...v3.4)
 
 **Implemented enhancements:**
@@ -549,6 +622,7 @@
 - cli switches not working [\#188](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/188)
 
 ## [v3.3](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.3) (2016-11-02)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.2...v3.3)
 
 **Implemented enhancements:**
@@ -562,6 +636,7 @@
 - Chrome/Chromium icon size [\#183](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/183)
 
 ## [v3.2](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.2) (2016-10-31)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.1...v3.2)
 
 **Implemented enhancements:**
@@ -585,6 +660,7 @@
 - Caprine [\#178](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/178) ([bilelmoussaoui](https://github.com/bilelmoussaoui))
 
 ## [v3.1](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.1) (2016-07-16)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.0.4...v3.1)
 
 **Implemented enhancements:**
@@ -599,9 +675,11 @@
 - Spotify support is broken in latest version [\#161](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/161)
 
 ## [v3.0.4](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.0.4) (2016-05-28)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.0.3...v3.0.4)
 
 ## [v3.0.3](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.0.3) (2016-05-22)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.0.2...v3.0.3)
 
 **Implemented enhancements:**
@@ -613,12 +691,17 @@
 - Script not working [\#160](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/160)
 
 ## [v3.0.2](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.0.2) (2016-05-22)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.0.1...v3.0.2)
 
 ## [v3.0.1](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.0.1) (2016-05-21)
+
 [Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/v3.0...v3.0.1)
 
 ## [v3.0](https://github.com/bilelmoussaoui/Hardcode-Tray/tree/v3.0) (2016-05-21)
+
+[Full Changelog](https://github.com/bilelmoussaoui/Hardcode-Tray/compare/4481279c12c6a46e0b5718161ccec795ea9f6eda...v3.0)
+
 **Implemented enhancements:**
 
 - Spotify script dangerous [\#156](https://github.com/bilelmoussaoui/Hardcode-Tray/issues/156)
@@ -707,61 +790,19 @@
 
 - Implements scritp installation [\#159](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/159) ([bilelmoussaoui](https://github.com/bilelmoussaoui))
 - Beta [\#149](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/149) ([bilelmoussaoui](https://github.com/bilelmoussaoui))
-- Adds support for whatsie [\#148](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/148) ([wa4557](https://github.com/wa4557))
+- Adds support for whatsie [\#148](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/148) ([andia89](https://github.com/andia89))
 - Implement Travis-ci [\#144](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/144) ([bilelmoussaoui](https://github.com/bilelmoussaoui))
 - Update script.py [\#137](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/137) ([marcosfede](https://github.com/marcosfede))
-- Symlinks for teamviewer [\#134](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/134) ([wa4557](https://github.com/wa4557))
-- use script for converting svg to png [\#116](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/116) ([wa4557](https://github.com/wa4557))
+- Symlinks for teamviewer [\#134](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/134) ([andia89](https://github.com/andia89))
+- use script for converting svg to png [\#116](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/116) ([andia89](https://github.com/andia89))
 - Add Inkscape support! [\#114](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/114) ([bilelmoussaoui](https://github.com/bilelmoussaoui))
 - Minor PEP8 Fixes [\#112](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/112) ([Foggalong](https://github.com/Foggalong))
 - Add dependency check [\#108](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/108) ([Foggalong](https://github.com/Foggalong))
 - New dependency - fixes \#104 [\#107](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/107) ([Foggalong](https://github.com/Foggalong))
-- Fixes \#102 [\#103](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/103) ([wa4557](https://github.com/wa4557))
-- Fixes error messages [\#101](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/101) ([wa4557](https://github.com/wa4557))
+- Fixes \#102 [\#103](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/103) ([andia89](https://github.com/andia89))
+- Fixes error messages [\#101](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/101) ([andia89](https://github.com/andia89))
 - Created LICENSE Folder [\#96](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/96) ([Foggalong](https://github.com/Foggalong))
-- unpacks only once [\#86](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/86) ([wa4557](https://github.com/wa4557))
-- Update script.py [\#83](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/83) ([wa4557](https://github.com/wa4557))
-- Fixes chrome issue [\#81](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/81) ([wa4557](https://github.com/wa4557))
-- Catches error when symlink tried to symlink to existing file [\#70](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/70) ([wa4557](https://github.com/wa4557))
-- Only one single backup function [\#69](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/69) ([wa4557](https://github.com/wa4557))
-- Delete sni\_qt folder at once [\#68](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/68) ([wa4557](https://github.com/wa4557))
-- Changes reverting to a more simple way [\#67](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/67) ([wa4557](https://github.com/wa4557))
-- Only backup if it is needed [\#66](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/66) ([wa4557](https://github.com/wa4557))
-- Update script.py [\#65](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/65) ([wa4557](https://github.com/wa4557))
-- Update db.csv [\#64](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/64) ([wa4557](https://github.com/wa4557))
-- Adds error message when script did not work [\#63](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/63) ([wa4557](https://github.com/wa4557))
-- Do space stripping before [\#61](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/61) ([wa4557](https://github.com/wa4557))
-- Fixes symlinks for skype \(and other qt apps\) [\#57](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/57) ([wa4557](https://github.com/wa4557))
-- Small fixes in code [\#52](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/52) ([wa4557](https://github.com/wa4557))
-- Better error handling [\#51](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/51) ([wa4557](https://github.com/wa4557))
-- Fixes sni\_qt folder not created [\#50](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/50) ([wa4557](https://github.com/wa4557))
-- fixes bug from missing extensions [\#49](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/49) ([wa4557](https://github.com/wa4557))
-- failsafe for png to svg icons [\#48](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/48) ([wa4557](https://github.com/wa4557))
-- Creates sni\_qt\_folder if it doesn't exist [\#47](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/47) ([wa4557](https://github.com/wa4557))
-- update spotify script [\#46](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/46) ([wa4557](https://github.com/wa4557))
-- Fixes small errors in chrome script + a few other suggestions [\#44](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/44) ([wa4557](https://github.com/wa4557))
-- Modifies owncloud script [\#42](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/42) ([wa4557](https://github.com/wa4557))
-- A symlink it is [\#41](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/41) ([wa4557](https://github.com/wa4557))
-- Adds owncloud bash script [\#39](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/39) ([wa4557](https://github.com/wa4557))
-- Adds missing import [\#38](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/38) ([wa4557](https://github.com/wa4557))
-- Optimisations and PEP8 compliance [\#37](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/37) ([Foggalong](https://github.com/Foggalong))
-- Pantheon detection & minor cleanup [\#36](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/36) ([Foggalong](https://github.com/Foggalong))
-- Removed unneeded file extensions [\#34](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/34) ([Foggalong](https://github.com/Foggalong))
-- Module cleanup [\#33](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/33) ([Foggalong](https://github.com/Foggalong))
-- Added cairosvg failsafe [\#32](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/32) ([Foggalong](https://github.com/Foggalong))
-- Update script.py [\#28](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/28) ([alex94cp](https://github.com/alex94cp))
-- Cosmetics [\#26](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/26) ([wa4557](https://github.com/wa4557))
-- More spotify fixes [\#24](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/24) ([wa4557](https://github.com/wa4557))
-- Another small error [\#23](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/23) ([wa4557](https://github.com/wa4557))
-- Makes script executable [\#22](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/22) ([wa4557](https://github.com/wa4557))
-- Adds spotify support [\#21](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/21) ([wa4557](https://github.com/wa4557))
-- Fixes telegram.txt [\#17](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/17) ([wa4557](https://github.com/wa4557))
-- fixes typo in radiotray.txt [\#16](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/16) ([wa4557](https://github.com/wa4557))
-- Adapts Readme [\#15](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/15) ([wa4557](https://github.com/wa4557))
-- Fixes typo in grive-tools.txt [\#13](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/13) ([wa4557](https://github.com/wa4557))
-- Catches error [\#12](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/12) ([wa4557](https://github.com/wa4557))
-- Fixes missing period + a few typos [\#11](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/11) ([wa4557](https://github.com/wa4557))
-- Makes script executable [\#8](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/8) ([wa4557](https://github.com/wa4557))
-- Minor README tweaks [\#6](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/6) ([Foggalong](https://github.com/Foggalong))
-- Improves detection of DE [\#3](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/3) ([wa4557](https://github.com/wa4557))
-- Handles problem when source and destination icons have different extensi... [\#2](https://github.com/bilelmoussaoui/Hardcode-Tray/pull/2) ([wa4557](https://github.com/wa4557))
+
+
+
+\* *This Changelog was automatically generated by [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator)*

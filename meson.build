@@ -16,8 +16,13 @@ if not py_installation.found()
   error('No valid Python 3 interpreter found.')
 endif
 
+distutils_libdir = run_command('python3', '-c',
+  '"import distutils.sysconfig; print(distutils.sysconfig.get_python_lib())"')
+if distutils_libdir.returncode() != 0
+  error('Unable to determine Python module install directory.')
+endif
 
-PYTHON_DIR = join_paths(get_option('prefix'), py_installation.get_path('purelib'))
+PYTHON_DIR = distutils_libdir.stdout().strip()
 DATA_DIR = join_paths(get_option('prefix'), get_option('datadir'), meson.project_name())
 LOCALE_DIR = join_paths(get_option('prefix'), get_option('localedir'))
 
