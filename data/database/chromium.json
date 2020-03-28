@@ -1,41 +1,47 @@
 {
-    "name": "Chromium",
-    "app_path": [
-        "/usr/lib/chromium-browser/",
-        "/usr/lib/chromium-dev/",
-        "/usr/lib/chromium/"
-    ],
-    "icons_path": [
-        "/usr/lib/chromium-browser/",
-        "/usr/lib/chromium-dev/",
-        "/usr/lib/chromium/"
-    ],
-    "script": "pak",
-    "binary": "resources.pak",
-    "icons": {
-        "tray": {
-            "original": "8003",
-            "theme": "google-chrome-tray"
-        },
-        "tray-56": {
-            "original": "10153",
-            "theme": "google-chrome-tray"
-        },
-        "tray-60-dev": {
-            "original": "10154",
-            "theme": "google-chrome-tray"
-        },
-        "tray-64": {
-            "original": "10156",
-            "theme": "google-chrome-tray"
-        },
-        "tray-68": {
-            "original": "10158",
-            "theme": "google-chrome-tray"
-        },
-        "tray-77": {
-            "original": "10151",
-            "theme": "google-chrome-tray"
-        }
+  "name": "Chromium",
+  "app_path": [
+    "/usr/lib/chromium-browser/",
+    "/usr/lib64/chromium-browser/",
+    "/usr/lib/chromium-dev/",
+    "/usr/lib/chromium/"
+  ],
+  "icons_path": [
+    "/usr/lib/chromium-browser/",
+    "/usr/lib64/chromium-browser/",
+    "/usr/lib/chromium-dev/",
+    "/usr/lib/chromium/"
+  ],
+  "script": "pak",
+  "binary": "resources.pak",
+  "icons": {
+    "tray": {
+      "original": "8003",
+      "theme": "google-chrome-tray"
+    },
+    "tray-56": {
+      "original": "10153",
+      "theme": "google-chrome-tray"
+    },
+    "tray-60-dev": {
+      "original": "10154",
+      "theme": "google-chrome-tray"
+    },
+    "tray-64": {
+      "original": "10156",
+      "theme": "google-chrome-tray"
+    },
+    "tray-68": {
+      "original": "10158",
+      "theme": "google-chrome-tray"
+    },
+    "tray-77": {
+      "original": "10151",
+      "theme": "google-chrome-tray"
+    },
+    "tray-80": {
+      "original": "9151",
+      "theme": "google-chrome-tray"
     }
+  }
 }
