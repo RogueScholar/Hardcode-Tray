@@ -1,17 +1,17 @@
 {
-    "name": "VK Messenger",
-    "app_path": [
-        "/usr/lib/vk/",
-        "/usr/share/vk/"
-    ],
-    "icons_path": [
-        "/usr/lib/vk/",
-        "/usr/share/vk/"
-    ],
-    "icons": {
-        "tray": {
-            "original": "icon24.png",
-            "theme": "vk-tray"
-        }
+  "name": "VK Messenger",
+  "app_path": [
+    "/usr/lib/vk/",
+    "/usr/share/vk/"
+  ],
+  "icons_path": [
+    "/usr/lib/vk/",
+    "/usr/share/vk/"
+  ],
+  "icons": {
+    "tray": {
+      "original": "icon24.png",
+      "theme": "vk-tray"
     }
+  }
 }
