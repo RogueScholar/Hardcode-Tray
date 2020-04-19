@@ -1,55 +1,55 @@
 {
-    "name": "MullvadVPN",
-    "app_path": [
-        "/opt/Mullvad VPN/",
-        "/opt/mullvad-vpn/"
-    ],
-    "icons_path": [
-        "/opt/Mullvad VPN/resources/",
-        "/opt/mullvad-vpn/resources/"
-    ],
-    "binary": "app.asar",
-    "script": "electron",
-    "icons": {
-        "tray1": {
-            "original": "build/assets/images/menubar icons/linux/lock-1.png",
-            "theme": "mullvad-tray-1"
-        },
-        "tray2": {
-            "original": "build/assets/images/menubar icons/linux/lock-2.png",
-            "theme": "mullvad-tray-2"
-        },
-        "tray3": {
-            "original": "build/assets/images/menubar icons/linux/lock-3.png",
-            "theme": "mullvad-tray-3"
-        },
-        "tray4": {
-            "original": "build/assets/images/menubar icons/linux/lock-4.png",
-            "theme": "mullvad-tray-4"
-        },
-        "tray5": {
-            "original": "build/assets/images/menubar icons/linux/lock-5.png",
-            "theme": "mullvad-tray-5"
-        },
-        "tray6": {
-            "original": "build/assets/images/menubar icons/linux/lock-6.png",
-            "theme": "mullvad-tray-6"
-        },
-        "tray7": {
-            "original": "build/assets/images/menubar icons/linux/lock-7.png",
-            "theme": "mullvad-tray-7"
-        },
-        "tray8": {
-            "original": "build/assets/images/menubar icons/linux/lock-8.png",
-            "theme": "mullvad-tray-8"
-        },
-        "tray9": {
-            "original": "build/assets/images/menubar icons/linux/lock-9.png",
-            "theme": "mullvad-tray-9"
-        },
-        "tray10": {
-            "original": "build/assets/images/menubar icons/linux/lock-10.png",
-            "theme": "mullvad-tray-10"
-        }
+  "name": "MullvadVPN",
+  "app_path": [
+    "/opt/Mullvad VPN/",
+    "/opt/mullvad-vpn/"
+  ],
+  "icons_path": [
+    "/opt/Mullvad VPN/resources/",
+    "/opt/mullvad-vpn/resources/"
+  ],
+  "binary": "app.asar",
+  "script": "electron",
+  "icons": {
+    "tray1": {
+      "original": "build/assets/images/menubar icons/linux/lock-1.png",
+      "theme": "mullvad-tray-1"
+    },
+    "tray2": {
+      "original": "build/assets/images/menubar icons/linux/lock-2.png",
+      "theme": "mullvad-tray-2"
+    },
+    "tray3": {
+      "original": "build/assets/images/menubar icons/linux/lock-3.png",
+      "theme": "mullvad-tray-3"
+    },
+    "tray4": {
+      "original": "build/assets/images/menubar icons/linux/lock-4.png",
+      "theme": "mullvad-tray-4"
+    },
+    "tray5": {
+      "original": "build/assets/images/menubar icons/linux/lock-5.png",
+      "theme": "mullvad-tray-5"
+    },
+    "tray6": {
+      "original": "build/assets/images/menubar icons/linux/lock-6.png",
+      "theme": "mullvad-tray-6"
+    },
+    "tray7": {
+      "original": "build/assets/images/menubar icons/linux/lock-7.png",
+      "theme": "mullvad-tray-7"
+    },
+    "tray8": {
+      "original": "build/assets/images/menubar icons/linux/lock-8.png",
+      "theme": "mullvad-tray-8"
+    },
+    "tray9": {
+      "original": "build/assets/images/menubar icons/linux/lock-9.png",
+      "theme": "mullvad-tray-9"
+    },
+    "tray10": {
+      "original": "build/assets/images/menubar icons/linux/lock-10.png",
+      "theme": "mullvad-tray-10"
     }
+  }
 }
