@@ -1,27 +1,107 @@
 {
-    "name": "Wire",
-    "app_path": [
-        "/opt/Wire/",
-        "/opt/wire-desktop/",
-        "/usr/lib/wire-desktop/",
-        "/usr/share/wire/"
-    ],
-    "icons_path": [
-        "/opt/Wire/resources/",
-        "/opt/wire-desktop/resources/",
-        "/usr/lib/wire-desktop/resources/",
-        "/usr/share/wire/resources/"
-    ],
-    "binary": "electron.asar",
-    "script": "electron",
-    "icons": {
-        "tray": {
-            "original": "electron/img/tray-icon/tray/tray.png",
-            "theme": "wire-tray"
-        },
-        "notification": {
-            "original": "electron/img/tray-icon/tray-with-badge/tray.badge.png",
-            "theme": "wire-tray-attention"
-        }
+  "name": "Wire",
+  "app_path": [
+    "/opt/Wire/",
+    "/opt/wire-desktop/",
+    "/usr/lib/wire-desktop/",
+    "/usr/share/wire/"
+  ],
+  "icons_path": [
+    "/opt/Wire/resources/",
+    "/opt/wire-desktop/resources/",
+    "/usr/lib/wire-desktop/resources/",
+    "/usr/share/wire/resources/"
+  ],
+  "binary": "app.asar",
+  "script": "electron",
+  "icons": {
+    "tray": {
+      "original": "electron/img/tray-icon/tray/tray.png",
+      "theme": "wire-tray"
+    },
+    "tray@1.25x": {
+      "original": "electron/img/tray-icon/tray/tray@1.25x.png",
+      "theme": "wire-tray"
+    },
+    "tray@1.33x": {
+      "original": "electron/img/tray-icon/tray/tray@1.33x.png",
+      "theme": "wire-tray"
+    },
+    "tray@1.4x": {
+      "original": "electron/img/tray-icon/tray/tray@1.4x.png",
+      "theme": "wire-tray"
+    },
+    "tray@1.5x": {
+      "original": "electron/img/tray-icon/tray/tray@1.5x.png",
+      "theme": "wire-tray"
+    },
+    "tray@1.8x": {
+      "original": "electron/img/tray-icon/tray/tray@1.8x.png",
+      "theme": "wire-tray"
+    },
+    "tray@2x": {
+      "original": "electron/img/tray-icon/tray/tray@2x.png",
+      "theme": "wire-tray"
+    },
+    "tray@2.5x": {
+      "original": "electron/img/tray-icon/tray/tray@2.5x.png",
+      "theme": "wire-tray"
+    },
+    "tray@3x": {
+      "original": "electron/img/tray-icon/tray/tray@3x.png",
+      "theme": "wire-tray"
+    },
+    "tray@4x": {
+      "original": "electron/img/tray-icon/tray/tray@4x.png",
+      "theme": "wire-tray"
+    },
+    "tray@5x": {
+      "original": "electron/img/tray-icon/tray/tray@5x.png",
+      "theme": "wire-tray"
+    },
+    "tray-badged": {
+      "original": "electron/img/tray-icon/tray-with-badge/tray.badge.png",
+      "theme": "wire-tray-attention"
+    },
+    "tray-badged@1.25x": {
+      "original": "electron/img/tray-icon/tray-with-badge/tray.badge@1.25x.png",
+      "theme": "wire-tray-attention"
+    },
+    "tray-badged@1.33x": {
+      "original": "electron/img/tray-icon/tray-with-badge/tray.badge@1.33x.png",
+      "theme": "wire-tray-attention"
+    },
+    "tray-badged@1.4x": {
+      "original": "electron/img/tray-icon/tray-with-badge/tray.badge@1.4x.png",
+      "theme": "wire-tray-attention"
+    },
+    "tray-badged@1.5x": {
+      "original": "electron/img/tray-icon/tray-with-badge/tray.badge@1.5x.png",
+      "theme": "wire-tray-attention"
+    },
+    "tray-badged@1.8x": {
+      "original": "electron/img/tray-icon/tray-with-badge/tray.badge@1.8x.png",
+      "theme": "wire-tray-attention"
+    },
+    "tray-badged@2x": {
+      "original": "electron/img/tray-icon/tray-with-badge/tray.badge@2x.png",
+      "theme": "wire-tray-attention"
+    },
+    "tray-badged@2.5x": {
+      "original": "electron/img/tray-icon/tray-with-badge/tray.badge@2.5x.png",
+      "theme": "wire-tray-attention"
+    },
+    "tray-badged@3x": {
+      "original": "electron/img/tray-icon/tray-with-badge/tray.badge@3x.png",
+      "theme": "wire-tray-attention"
+    },
+    "tray-badged@4x": {
+      "original": "electron/img/tray-icon/tray-with-badge/tray.badge@4x.png",
+      "theme": "wire-tray-attention"
+    },
+    "tray-badged@5x": {
+      "original": "electron/img/tray-icon/tray-with-badge/tray.badge@5x.png",
+      "theme": "wire-tray-attention"
     }
+  }
 }
