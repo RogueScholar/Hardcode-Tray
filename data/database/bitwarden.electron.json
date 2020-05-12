@@ -1,19 +1,19 @@
 {
-    "name": "Bitwarden",
-    "app_path": [
-        "/opt/Bitwarden/",
-        "/usr/lib/bitwarden/"
-    ],
-    "icons_path": [
-        "/opt/Bitwarden/resources/",
-        "/usr/lib/bitwarden/resources/"
-    ],
-    "binary": "app.asar",
-    "script": "electron",
-    "icons": {
-        "tray": {
-            "original": "images/icon.png",
-            "theme": "bitwarden-tray"
-        }
+  "name": "Bitwarden",
+  "app_path": [
+    "/opt/Bitwarden/",
+    "/usr/lib/bitwarden/"
+  ],
+  "icons_path": [
+    "/opt/Bitwarden/resources/",
+    "/usr/lib/bitwarden/resources/"
+  ],
+  "binary": "app.asar",
+  "script": "electron",
+  "icons": {
+    "tray": {
+      "original": "images/icon.png",
+      "theme": "bitwarden-tray"
     }
+  }
 }
