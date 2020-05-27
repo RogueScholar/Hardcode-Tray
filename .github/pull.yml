@@ -3,11 +3,11 @@ rules:
   - base: master
     upstream: bilelmoussaoui:master
     mergeMethod: rebase
-  - base: beta
-    upstream: bilelmoussaoui:beta
-    mergeMethod: rebase
+    mergeUnstable: false
     assignees:
       - RogueScholar
     reviewers:
       - RogueScholar
+    conflictReviewers:
+          - RogueScholar
 label: ":arrow_heading_down: pull"

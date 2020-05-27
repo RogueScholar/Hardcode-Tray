@@ -18,12 +18,12 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Hardcode-Tray. If not, see <http://www.gnu.org/licenses/>.
 """
+import subprocess
 from functools import reduce
 from gettext import gettext as _
 from os import makedirs, listdir, path, remove, symlink
 from re import findall, match, sub
 from shutil import copyfile
-from subprocess import PIPE, Popen, call
 from sys import stdout
 
 from gi.repository import Gio
@@ -172,10 +172,10 @@ def execute(command_list, verbose=True, shell=False, working_directory=None):
     """
     Logger.debug("Executing command: {0}".format(" ".join(command_list)))
     if working_directory:
-        cmd = Popen(command_list, stdout=PIPE, stderr=PIPE, shell=shell,
+        cmd = Popen(command_list, stdout=PIPE, stderr=PIPE, shell=False,
                     cwd=working_directory)
     else:
-        cmd = Popen(command_list, stdout=PIPE, stderr=PIPE, shell=shell)
+        cmd = Popen(command_list, stdout=PIPE, stderr=PIPE, shell=False)
 
     output, error = cmd.communicate()
     if verbose and error:
@@ -185,8 +185,10 @@ def execute(command_list, verbose=True, shell=False, working_directory=None):
 
 def is_installed(binary):
     """Check if a binary file exists/installed."""
-    ink_flag = call(['which', binary], stdout=PIPE, stderr=PIPE)
-    return bool(ink_flag == 0)
+    retcode = run(
+        ['command', '-v', binary], stdout=PIPE, stderr=PIPE, shell=False
+    )
+    return bool(retcode == 0)
 
 
 def get_iterated_icons(icons):

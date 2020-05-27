@@ -1,8 +1,7 @@
 # Hardcode-Tray
 
 [![CircleCI](https://circleci.com/gh/RogueScholar/Hardcode-Tray/tree/master.svg?style=svg)](https://circleci.com/gh/RogueScholar/Hardcode-Tray/tree/master)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4d5c0768b874407bb1dcc2f928899ba5)](https://www.codacy.com/app/bil-elmoussaoui/Hardcode-Tray?utm_source=github.com&utm_medium=referral&utm_content=bil-elmoussaoui/Hardcode-Tray&utm_campaign=Badge_Grade)
-[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/Hardcode-Tray/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/ce889b88b0d647eda38ab83512c90134)](https://www.codacy.com/manual/RogueScholar/Hardcode-Tray?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=RogueScholar/Hardcode-Tray&amp;utm_campaign=Badge_Grade)
 [![Hardcode-Tray
 release](https://img.shields.io/badge/release-v4.3-blue.svg)](https://github.com/bilelmoussaoui/Hardcode-Tray/releases)
 
@@ -42,7 +41,7 @@ more information.
 ### Building dependencies
 
  - `ninja`
- - `meson (>= 0.40)`
+ - `meson (>= 0.46)`
 
 ## Install
 

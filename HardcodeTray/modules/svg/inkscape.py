@@ -37,7 +37,9 @@ class Inkscape(SVG):
     def convert_to_png(self, input_file, output_file, width=None, height=None):
         """Convert svg to png."""
 
-        is_pre_v1 = run(["inkscape", "--without-gui"], timeout=4, check=False)
+        is_pre_v1 = run(
+            ["inkscape", "--without-gui"], shell=False, timeout=4, check=False
+        )
 
         if is_pre_v1.returncode != 0:
             cmd = [self.cmd, "-o", output_file]
