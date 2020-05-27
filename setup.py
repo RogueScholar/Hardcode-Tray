@@ -59,7 +59,7 @@ setup(
     install_requires=['CairoSVG'],
     packages=setuptools.find_packages(where='HardcodeTray'),
     package_dir={'': 'HardcodeTray'},
-    scripts=['hardcode-tray']
+    scripts=['hardcode-tray'],
     data_files=[
         ('share/hardcode-tray/database', iglob('data/**/*.json', recursive=True)),
     ],
@@ -73,5 +73,5 @@ setup(
         "Programming Language :: Python :: 3 :: Only",
         "Topic :: Desktop Environment"
     ],
-    python_requires='~=3.5',
+    python_requires='~=3.5'
 )

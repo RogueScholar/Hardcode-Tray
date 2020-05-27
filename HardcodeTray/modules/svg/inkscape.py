@@ -18,6 +18,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Hardcode-Tray. If not, see <http://www.gnu.org/licenses/>.
 """
+from subprocess import run
 from HardcodeTray.modules.svg.svg import SVG, SVGNotInstalled
 from HardcodeTray.utils import execute
 
@@ -35,10 +36,16 @@ class Inkscape(SVG):
 
     def convert_to_png(self, input_file, output_file, width=None, height=None):
         """Convert svg to png."""
-        cmd = [self.cmd, "-z", "-f", input_file, "-e", output_file]
+
+        is_pre_v1 = run(["inkscape", "--without-gui"], timeout=4, check=False)
+
+        if is_pre_v1.returncode != 0:
+            cmd = [self.cmd, "-o", output_file]
+        else:
+            cmd = [self.cmd, "-z", "-e", output_file]
 
         if width and height:
             cmd.extend(["-w", str(width), "-h", str(height)])
 
-        # Fix for inkscape 0.92
+        cmd.extend(input_file)
         execute(cmd, False)

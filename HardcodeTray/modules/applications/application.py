@@ -24,11 +24,13 @@ from shutil import rmtree
 from time import time
 
 from HardcodeTray.const import BACKUP_FOLDER
-from HardcodeTray.decorators import install_wrapper, revert_wrapper, symlinks_installer
 from HardcodeTray.enum import Action
 from HardcodeTray.modules.backup import Backup
 from HardcodeTray.modules.log import Logger
 from HardcodeTray.utils import symlink_file
+from HardcodeTray.decorators import (
+    install_wrapper, revert_wrapper, symlinks_installer
+)
 
 
 class Application:

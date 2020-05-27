@@ -22,7 +22,7 @@ along with Hardcode-Tray. If not, see <http://www.gnu.org/licenses/>.
 from __future__ import absolute_import
 
 from json import dumps, loads
-from struct import error as StructError
+from struct import error as structerror
 from struct import pack, unpack
 
 from HardcodeTray.modules.log import Logger
@@ -69,7 +69,7 @@ class AsarFile:
             self._header = loads(header)
             self._offset = asarfile.tell() + self._zeros
             asarfile.close()
-        except StructError:
+        except structerror:
             Logger.error(
                 "Electron: Couldn't read asar file {}".format(self._asar_file))
             self.success = False

@@ -107,8 +107,8 @@ class DataPack:
                         resource_count, len(alias_map)))
 
         # Write index.
-        HEADER_LENGTH = 4 + 4 + 2 + 2
-        data_offset = HEADER_LENGTH + \
+        header_length = 4 + 4 + 2 + 2
+        data_offset = header_length + \
             (resource_count + 1) * 6 + len(alias_map) * 4
 
         index_by_id = {}

@@ -193,7 +193,7 @@ def get_iterated_icons(icons):
     """Used to avoid multiple icons names, like for telegram."""
     new_icons = []
     for icon in icons:
-        search = findall(r"{\d+\-\d+}", icon)
+        search = findall(r"{\d+-\d+}", icon)
         if len(search) == 1:
             values = search[0].strip("{").strip("}").split("-")
             minimum, maximum = int(values[0]), int(values[1])

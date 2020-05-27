@@ -21,19 +21,17 @@ along with Hardcode-Tray. If not, see <http://www.gnu.org/licenses/>.
 from gettext import gettext as _
 from glob import glob
 from os import path
+from sys import exit
 
 from HardcodeTray.const import DB_FOLDER
-from HardcodeTray.enum import Action
-from HardcodeTray.utils import progress
-
-from HardcodeTray.modules.log import Logger
-from HardcodeTray.modules.parser import Parser
 
 from HardcodeTray.modules.config.arguments import ArgumentsConfig
 from HardcodeTray.modules.config.json import JSONConfig
 from HardcodeTray.modules.config.system import SystemConfig
-
+from HardcodeTray.modules.log import Logger
+from HardcodeTray.modules.parser import Parser
 from HardcodeTray.modules.svg.svg import SVG
+from HardcodeTray.utils import progress
 
 
 class App:
@@ -130,9 +128,9 @@ class App:
 
         if apps:
             print(_("Took {:.2f}s to finish the tasks").format(total_time))
-        elif action == Action.APPLY:
+        elif ArgumentsConfig.action == Action.APPLY:
             print(_("No apps to fix!"))
-        elif action == Action.CLEAR_CACHE:
+        elif ArgumentsConfig.action == Action.CLEAR_CACHE:
             print(_("No cache found."))
         else:
             print(_("No apps to revert!"))
@@ -186,5 +184,5 @@ class App:
         """
         path_ = App.get("path")
         if len(App.get("only")) > 1 and path_:
-            exit(_("You can't use --path with more than application at once."))
+            exit("You can't use --path with more than a single application.")
         return path_

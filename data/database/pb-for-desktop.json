@@ -13,7 +13,7 @@
             "original": "icons/linux/icon-tray-default.png",
             "theme": "pushbullet-indicator"
         },
-        "tray": {
+        "opaque": {
             "original": "icons/linux/icon-tray-opaque.png",
             "theme": "pushbullet-indicator"
         },

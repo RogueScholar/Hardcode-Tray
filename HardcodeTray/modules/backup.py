@@ -182,13 +182,7 @@ class Backup:
                              "the application {0}".format(self.app.name))
 
     def remove(self, file_name):
-        """
-        Backup functions, enables reverting.
-
-        Args:
-            icon(str) : the original icon name
-            revert(bool) : True: revert, False: only backup
-        """
+        """Backup functions, enables reverting."""
         try:
             backup_file = path.join(BACKUP_FOLDER,
                                     self.app.name,

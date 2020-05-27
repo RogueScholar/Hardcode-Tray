@@ -23,8 +23,10 @@ from shutil import make_archive, move, rmtree
 from tempfile import gettempdir
 
 from HardcodeTray.modules.log import Logger
-from HardcodeTray.modules.applications.helpers.extract import ExtractApplication
 from HardcodeTray.utils import execute
+from HardcodeTray.modules.applications.helpers.extract import (
+    ExtractApplication
+)
 
 
 class NWJSApplication(ExtractApplication):
@@ -55,7 +57,10 @@ class NWJSApplication(ExtractApplication):
             binary_file = path.join(gettempdir(), self.binary)
 
             Logger.debug(
-                "NWJS Application: Creating new archive {}".format(self.binary))
+                "NWJS Application: Creating new archive {}".format(
+                    self.binary
+                )
+            )
             make_archive(binary_file, "zip", self.tmp_path)
 
             move(binary_file + ".zip", binary_file + ".nw")
