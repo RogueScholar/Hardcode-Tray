@@ -11,21 +11,18 @@ include /usr/share/dpkg/default.mk
 
 
 %:
-	dh $@ --with python3
+	dh $@ --with python3 --buildsystem=meson+ninja
 
 
-override_dh_auto_clean:
-	rm -rf $(CURDIR)/builddir
+override_dh_update_autotools_config:
+
+override_dh_autoreconf:
 
 override_dh_auto_configure:
-	install -d $(CURDIR)/builddir
-	meson setup --prefix=/usr --buildtype debugoptimized --optimization 2 \
-		--strip $(CURDIR)/builddir $(CURDIR)
-
-override_dh_auto_build:
-	ninja -v -C $(CURDIR)/builddir
-
-override_dh_auto_install:
-	DESTDIR=$(CURDIR)/debian/hardcode-tray ninja -v -C $(CURDIR)/builddir install
+	install -d obj-x86_64-linux-gnu
+	cd obj-x86_64-linux-gnu && LC_ALL=C.UTF-8 meson configure \
+		--wrap-mode=nodownload --buildtype=plain --prefix=/usr \
+		--sysconfdir=/etc --localstatedir=/var --libdir=lib/x86_64-linux-gnu \
+		$(CURDIR)/obj-x86_64-linux-gnu $(CURDIR)
 
 override_dh_auto_test:

@@ -1,8 +1,8 @@
 project('hardcode-tray',
-  version: '4.3',
+  version: run_command('debian/get-version').stdout().strip(),
   meson_version: '>= 0.46.0',
   license: 'GPL-3.0',
-  default_options: ['prefix=/usr', 'install-layout=deb']
+  default_options: ['prefix=/usr']
 )
 
 dependency('gobject-introspection-1.0')

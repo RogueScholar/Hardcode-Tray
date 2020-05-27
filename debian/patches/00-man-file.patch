@@ -5,19 +5,10 @@ Description: Correct man file mdoc syntax
 Author: Peter J. Mello <admin@petermello.net>
 Origin: other
 Forwarded: no
-Last-Update: 2020-01-28
+Last-Update: 2020-05-13
 
 --- hardcode-tray-4.3.orig/data/man/hardcode-tray.1
 +++ hardcode-tray-4.3/data/man/hardcode-tray.1
-@@ -35,7 +35,7 @@ Clears the backup cache folder.
- .It --conversion-tool Ar TOOL
- By default, the conversion tool is detected form installed applications. The user can choose to override htis by providing a tool, where TOOL is one of {Inkscape, CairoSVG, RSVGConvert, ImageMagick, SVGExport}.
- .It --dark-theme Ar THEME Ar --light-theme Ar THEME
--Useful for applications with different sets of icons for light and dark themes. THEME is respectively set as the dark and light theme. Supercedes \fI--theme\fR.
-+Useful for applications with different sets of icons for light and dark themes. THEME is respectively set as the dark and light theme; supersedes \fI--theme\fR.
- .It --only Ar APP, ...
- Choose to only apply given applications instead of all of them.
- .It --path Ar PATH
 @@ -47,17 +47,19 @@ to use a certain icon size, where SIZE is one of
  .It --version
  Prints the version of
@@ -31,13 +22,12 @@ Last-Update: 2020-01-28
  .It blacklist
  List applications whose tray icons will never be patched.
  .It conversion_tool
--Default tool to be used. Supercedes autodetection.
+-Default tool to be used. Supersedes autodetection.
 +Default tool to be used; supersedes auto-detection.
  .It icons
  Object containing the \fItheme\fR and \fIsize\fR of the icon to be used.
  .It backup_ignore
--Boolean setting wether to ignore backing up the original icon.
-+Boolean setting whether to ignore backing up the original icon.
+ Boolean setting whether to ignore backing up the original icon.
  .It scaling_factor
 -Widgets scaling factor, autodetected in GNOME, KDE and Cinnamon.
 +Widgets scaling factor, auto-detected in GNOME, KDE and Cinnamon.

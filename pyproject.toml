@@ -1,0 +1,7 @@
+[build-system]
+requires = ["setuptools>=36.4.0", "wheel", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+write_to = "HardcodeTray/version.py"
+fallback_version = "4.4.0a1.dev0"

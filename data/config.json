@@ -1,11 +1,11 @@
 {
-    "blacklist": ["telegram", "hangouts"],
-    "icons": {
-        "theme": "Numix",
-        "size": 24
-    },
-    "conversion_tool": "CairoSVG",
-    "backup_ignore": true,
-    "nwjs": "/home/myusername/Tools/nwjs/",
-    "scaling_factor": 1
+  "backup_ignore": true,
+  "blacklist": [],
+  "conversion_tool": "RSVGConvert",
+  "icons": {
+    "theme": "Papirus",
+    "size": 22
+  },
+  "nwjs": "~/.config/HardcodeTray/nwjs/",
+  "scaling_factor": 1
 }

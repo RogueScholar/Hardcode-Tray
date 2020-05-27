@@ -1,0 +1,19 @@
+include *.md
+include *.py
+include LICENSE
+include pyproject.toml
+
+exclude *.*project
+exclude *.*workspace
+exclude .editorconfig
+exclude CODE_OF_CONDUCT.md
+
+graft data/database
+graft tests
+
+prune .circleci
+prune .github
+prune debian
+prune screenshots
+
+global-exclude *.py[cod] __pycache__
