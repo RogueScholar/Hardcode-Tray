@@ -20,6 +20,7 @@ along with Hardcode-Tray. If not, see <http://www.gnu.org/licenses/>.
 """
 from os import path
 
+from HardcodeTray.app import App
 from HardcodeTray.utils import get_extension, get_iterated_icons
 
 
@@ -45,7 +46,6 @@ class Icon:
     @staticmethod
     def get_theme(icon_name):
         """Get the theme to be used dark or light."""
-        from HardcodeTray.app import App
 
         if isinstance(App.theme(), dict):
             is_dark = "dark" in icon_name.lower()

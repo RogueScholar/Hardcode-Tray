@@ -21,6 +21,7 @@ along with Hardcode-Tray. If not, see <http://www.gnu.org/licenses/>.
 from gettext import gettext as _
 from gi import require_version
 from gi.repository import Gtk
+from sys import exit
 
 from HardcodeTray.const import DESKTOP_ENV
 from HardcodeTray.modules.log import Logger
@@ -31,7 +32,7 @@ from HardcodeTray.utils import (
 )
 
 
-require_version("Gtk", "3.0")
+require_version('Gtk', '3.0')
 
 
 class SystemConfig:
@@ -40,7 +41,7 @@ class SystemConfig:
     @staticmethod
     def icon_size():
         """Return the icon size."""
-        if DESKTOP_ENV in ("pantheon", "xfce"):
+        if DESKTOP_ENV in ('pantheon', 'xfce'):
             icon_size = 24
         else:
             icon_size = 22
@@ -67,33 +68,33 @@ class SystemConfig:
     def theme():
         """Return a theme object."""
         theme_name = Gtk.Settings.get_default().get_property(
-            "gtk-icon-theme-name"
+            'gtk-icon-theme-name'
         )
         theme = None
         if theme_name:
             Logger.debug("System/Theme: {}".format(theme_name))
             theme = Theme(theme_name)
         else:
-            Logger.error("System/Theme: Not detected.")
+            Logger.error('System/Theme: Not detected.')
         return theme
 
     @staticmethod
     def action():
         """Return the action to be done."""
         from HardcodeTray.enum import Action
-        print(_("1 - Apply"))
-        print(_("2 - Revert"))
-        print(_("3 - Clear Backup Cache"))
+        print(_('1 - Apply'))
+        print(_('2 - Revert'))
+        print(_('3 - Clear Backup Cache'))
         has_chosen = False
         while not has_chosen:
             try:
-                action = int(input(_("Please choose: ")))
+                action = int(input(_('Please choose: ')))
                 if action not in Action.choices():
-                    print(_("Please try again"))
+                    print(_('Please try again'))
                 else:
                     has_chosen = True
                     return action
             except ValueError:
-                print(_("Please choose a valid value!"))
+                print(_('Please choose a valid value!'))
             except KeyboardInterrupt:
                 exit("")

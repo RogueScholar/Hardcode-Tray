@@ -21,6 +21,7 @@ along with Hardcode-Tray. If not, see <http://www.gnu.org/licenses/>.
 from gettext import gettext as _
 from os import listdir, path, remove
 from shutil import move
+from sys import exit
 from tempfile import gettempdir
 from time import strftime
 
@@ -70,16 +71,16 @@ class Backup:
 
     def create_backup_dir(self):
         """Create a backup directory for an application (application_name)."""
-        backup_dir = path.join(BACKUP_FOLDER,
-                               self.app.name,
-                               strftime(BACKUP_FILE_FORMAT), "")
+        backup_dir = path.join(
+            BACKUP_FOLDER, self.app.name, strftime(BACKUP_FILE_FORMAT), ''
+        )
         exists = True
         new_backup_dir = backup_dir
         i = 1
 
         while exists:
             if path.exists(new_backup_dir):
-                new_backup_dir = backup_dir + "_" + str(i)
+                new_backup_dir = backup_dir + '_' + str(i)
             if not path.isdir(new_backup_dir):
                 Logger.debug("Create new backup folder "
                              "for {}".format(self.app.name))
@@ -93,7 +94,7 @@ class Backup:
         """Backup functions."""
         from HardcodeTray.app import App
 
-        if not App.get("backup_ignore"):
+        if not App.get('backup_ignore'):
             if not self.backup_dir:
                 self.create_backup_dir()
 
@@ -101,8 +102,11 @@ class Backup:
                                     path.basename(filename))
 
             if path.exists(filename):
-                Logger.debug("Backup file: {0} to: {1}".format(filename,
-                                                               backup_file))
+                Logger.debug(
+                    "Backup file: {0} to: {1}".format(
+                        filename, backup_file
+                    )
+                )
                 copy_file(filename, backup_file, True)
 
     def file(self, filename, binary):
@@ -118,10 +122,9 @@ class Backup:
     def get_backup_file(self, filename):
         """Return the backup file path."""
         try:
-            backup_file = path.join(BACKUP_FOLDER,
-                                    self.app.name,
-                                    self.selected_backup,
-                                    filename)
+            backup_file = path.join(
+                BACKUP_FOLDER, self.app.name, self.selected_backup, filename
+            )
 
             if path.exists(backup_file):
                 return backup_file
@@ -161,8 +164,8 @@ class Backup:
 
             while not has_chosen and not stopped:
                 try:
-                    selected = input("Select a restore date : ")
-                    if selected in ["q", "quit", "exit"]:
+                    selected = input('Select a restore date : ')
+                    if selected in ['q', 'quit', 'exit']:
                         stopped = True
                     selected = int(selected)
                     if 1 <= selected <= total:
@@ -184,10 +187,10 @@ class Backup:
     def remove(self, file_name):
         """Backup functions, enables reverting."""
         try:
-            backup_file = path.join(BACKUP_FOLDER,
-                                    self.app.name,
-                                    self.selected_backup,
-                                    path.basename(file_name))
+            backup_file = path.join(
+                BACKUP_FOLDER, self.app.name, self.selected_backup,
+                path.basename(file_name)
+            )
 
             if path.isfile(backup_file):
                 move(backup_file, file_name)

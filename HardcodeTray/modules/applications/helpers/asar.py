@@ -76,14 +76,14 @@ class AsarFile:
 
     def write(self, icon, pngbytes):
         """Write some bytes to a icon path."""
-        self._keys = icon.split("/")
+        self._keys = icon.split('/')
 
         fileinfo = get_from_dict(self._header, self._keys)
         # Make sure the icon to replace is found on the asar file
         # To avoid breaking the binary.
         # This is due to apps renaming/moving the icons around
         if (not isinstance(fileinfo, dict)
-                or "offset" not in fileinfo.keys()):
+                or 'offset' not in fileinfo.keys()):
             return
 
         offset0 = int(fileinfo['offset'])

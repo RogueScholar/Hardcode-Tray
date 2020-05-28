@@ -19,7 +19,7 @@ executors:
       LANGUAGE: "en_US"
       LC_ALL: "C.UTF-8"
       LINTIAN_PROFILE: "ubuntu"
-      PACKAGE_VER: "$(wget -q --header='Accept: application/json' -O - --server-response 'https://github.com/bilelmoussaoui/Hardcode-Tray/releases/latest' 2>/dev/null | tr -s '\n' ' ' | sed 's/.*\"tag_name\":\"v//' | sed 's/\".*//')"
+      PACKAGE_VER: $(wget -qSO- --header='Accept: application/json' https://github.com/bilelmoussaoui/Hardcode-Tray/releases/latest 2>/dev/null | tr -s '\n' ' ' | sed -e 's/.*\"tag_name\":\"v//' | perl -pe "s/\".*/\+dev$(date +%Y%m%dT%H%M)/")
       TZ: "America/Los_Angeles"
 jobs:
   build_with_meson:
@@ -53,7 +53,7 @@ jobs:
       - run:
           name: Run build tests and redirect tty output to test artifacts dir
           command: |
-            typeset -gx TIMESTAMP="$(date +%Y%m%dT%H%M%Z)"
+            typeset -grx TIMESTAMP="$(date +%Y%m%dT%H%M%Z)"
             mkdir -p "${HOME}/artifacts/meson"
             python3 ./tests/database/database.py | tee "${HOME}/artifacts/meson/database-test-ci${TIMESTAMP}.log"
             sh ./tests/pylint.sh | tee "${HOME}/artifacts/meson/pylint-report-ci${TIMESTAMP}.log"
@@ -88,18 +88,20 @@ jobs:
       - run:
           name: Create build directories and clean source tarball
           command: |
-            typeset -gx TIMESTAMP="$(date +%Y%m%dT%H%M%Z)"
-            mkdir -p "hardcode-tray_${PACKAGE_VER}+${TIMESTAMP}"
-            cp -R ./* "hardcode-tray_${PACKAGE_VER}+${TIMESTAMP}"
-            cd "${CIRCLE_WORKING_DIRECTORY}/hardcode-tray_${PACKAGE_VER}+${TIMESTAMP}" || exit 1
+            mkdir -p "hardcode-tray_${PACKAGE_VER}"
+            cp -R ./* "hardcode-tray_${PACKAGE_VER}"
+            cd "${CIRCLE_WORKING_DIRECTORY}/hardcode-tray_${PACKAGE_VER}" || exit 1
             rm -rf .git .circleci .github screenshots && cd ..
-            tar cf "hardcode-tray_${PACKAGE_VER}+${TIMESTAMP}.orig.tar" "hardcode-tray_${PACKAGE_VER}+${TIMESTAMP}"
-            xz -z -T 0 "hardcode-tray_${PACKAGE_VER}+${TIMESTAMP}.orig.tar"
-            cd "${CIRCLE_WORKING_DIRECTORY}/hardcode-tray_${PACKAGE_VER}+${TIMESTAMP}" || exit 1
+            tar cf "hardcode-tray_${PACKAGE_VER}.orig.tar" "hardcode-tray_${PACKAGE_VER}"
+            xz -z -T 0 "hardcode-tray_${PACKAGE_VER}.orig.tar"
+            cd "${CIRCLE_WORKING_DIRECTORY}/hardcode-tray_${PACKAGE_VER}" || exit 1
       - run:
           name: Build binary and source Debian packages
           command: |
-            perl -i -pe "s/$(grep -P -m 1 -o '\d+\.[\d\.\w]*-[\d\.\w\+~-]+' debian/changelog)/${PACKAGE_VER}+${TIMESTAMP}-0ci${CIRCLE_SHA1}/" debian/changelog
+            typeset -grx TIMESTAMP="$(date +%Y%m%dT%H%M%Z)"
+            perl -i -pe \
+            "s/$(dpkg-parsechangelog -l debian/changelog -SVersion)/${PACKAGE_VER}-0ci${CIRCLE_SHA1}/" \
+            debian/changelog
             sed -E -i "1s/(unstable|experimental)/$(lsb_release -cs)/" debian/changelog
             CI=true debuild
             mkdir -p "${HOME}/artifacts/debian"

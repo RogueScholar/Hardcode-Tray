@@ -9,5 +9,5 @@ rules:
     reviewers:
       - RogueScholar
     conflictReviewers:
-          - RogueScholar
+      - RogueScholar
 label: ":arrow_heading_down: pull"

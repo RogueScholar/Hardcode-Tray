@@ -21,9 +21,9 @@ along with Hardcode-Tray. If not, see <http://www.gnu.org/licenses/>.
 from importlib import import_module
 from os import path
 
+from HardcodeTray.app import App
 from HardcodeTray.const import ARCH, USERHOME
 from HardcodeTray.utils import get_exact_folder
-
 from HardcodeTray.modules.log import Logger
 
 
@@ -77,10 +77,7 @@ class Path:
         return self._exists
 
     def _validate(self):
-        """
-            Check wether a folder path exists or not.
-        """
-        from HardcodeTray.app import App
+        """Check whether a folder path exists or not."""
 
         Path.DB_VARIABLES["{size}"] = str(App.icon_size())
 

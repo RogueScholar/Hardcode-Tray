@@ -23,7 +23,7 @@ from gettext import gettext as _
 from os import makedirs, listdir, path, remove, symlink
 from re import findall, match, sub
 from shutil import copyfile
-from subprocess import check_output, run
+from subprocess import check_output, Popen, run
 from sys import stdout
 
 from gi.repository import Gio
@@ -32,7 +32,7 @@ from HardcodeTray.const import KDE_CONFIG_FILE
 from HardcodeTray.modules.log import Logger
 
 
-def progress(count, count_max, time, app_name=""):
+def progress(count, count_max, time, app_name=''):
     """Used to draw a progress bar."""
     bar_len = 36
     space = 20
@@ -41,11 +41,12 @@ def progress(count, count_max, time, app_name=""):
     percents = round(100.0 * count / float(count_max), 1)
     progress_bar = '#' * filled_len + '.' * (bar_len - filled_len)
 
-    stdout.write("\r{0!s}{1!s}".format(app_name,
-                                       " " * (abs(len(app_name) - space))))
-    stdout.write('[{0}] {1}/{2} {3}% {4:.2f}s\r'.format(progress_bar,
-                                                        count, count_max,
-                                                        percents, time))
+    stdout.write("\r{0!s}{1!s}".format(
+        app_name, " " * (abs(len(app_name) - space))
+    ))
+    stdout.write('[{0}] {1}/{2} {3}% {4:.2f}s\r'.format(
+        progress_bar, count, count_max, percents, time
+    ))
     print("")
     stdout.flush()
 
@@ -124,8 +125,8 @@ def get_kde_scaling_factor():
 def get_gnome_scaling_factor():
     """Return gnome scaling factor."""
     source = Gio.SettingsSchemaSource.get_default()
-    if source.lookup("org.gnome.desktop.interface", True):
-        gsettings = Gio.Settings.new("org.gnome.desktop.interface")
+    if source.lookup('org.gnome.desktop.interface', True):
+        gsettings = Gio.Settings.new('org.gnome.desktop.interface')
         scaling_factor = gsettings.get_uint('scaling-factor') + 1
         Logger.debug("Scaling Factor/GNOME: {}".format(scaling_factor))
         return scaling_factor
@@ -137,8 +138,8 @@ def get_gnome_scaling_factor():
 def get_cinnamon_scaling_factor():
     """Return Cinnamon desktop scaling factor."""
     source = Gio.SettingsSchemaSource.get_default()
-    if source.lookup("org.cinnamon.desktop.interface", True):
-        gsettings = Gio.Settings.new("org.cinnamon.desktop.interface")
+    if source.lookup('org.cinnamon.desktop.interface', True):
+        gsettings = Gio.Settings.new('org.cinnamon.desktop.interface')
         scaling_factor = gsettings.get_uint('scaling-factor')
         if scaling_factor == 0:
             # Cinnamon does have an auto scaling feature which we can't use
@@ -173,26 +174,30 @@ def execute(command_list, verbose=True, shell=False, working_directory=None):
     Logger.debug("Executing command: {0}".format(" ".join(command_list)))
     if working_directory:
         cmd = run(
-            command_list, capture_output=True, shell=False,
+            command_list, capture_output=True, shell=False, check=False,
             cwd=working_directory
         )
     else:
-        cmd = run(command_list, capture_output=True, shell=False)
+        cmd = run(command_list, capture_output=True, shell=False, check=False)
 
-    output, error = cmd.communicate()
+    output, error = Popen.communicate()
     if verbose and error:
-        Logger.error(error.decode("utf-8").strip())
+        Logger.error(error.decode('utf-8').strip())
     return output
 
 
 def is_installed(binary):
     """Check if a binary file exists/installed."""
-    retcode = run(['command', '-v', binary], capture_output=True, shell=False)
+    retcode = run(
+        ['/bin/bash', '-c', print('"command ', '-v ', binary, '"', sep='')],
+        capture_output=True, shell=False, Check=False
+    )
     return bool(retcode == 0)
 
 
 def abs_exec_path(binary):
-    args = ['command', '-v', binary]
+    """Use Bash built-in 'command -v' invocation to find the absolute path"""
+    args = ['/bin/bash', '-c', print('"command ', '-v ', binary, '"', sep='')]
     return check_output(args, shell=False, timeout=2)
 
 
@@ -285,16 +290,14 @@ def replace_colors(file_name, colors):
 
 
 def get_exact_folder(key, directory, condition):
-    """
-        Get subdirs and apply a condition on each until one is found.
-    """
+    """Get subdirs and apply a condition on each until one is found."""
     dirs = directory.split(key)
-    exact_directory = ""
+    exact_directory = ''
 
     if path.isdir(dirs[0]):
         directories = listdir(dirs[0])
         for dir_ in directories:
-            if condition(path.join(dirs[0], dir_, "")):
+            if condition(path.join(dirs[0], dir_, '')):
                 exact_directory = dir_
                 break
 

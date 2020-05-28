@@ -70,7 +70,7 @@ class ArgumentsConfig:
         if not args_colors:
             args_colors = []
         for color in args_colors:
-            color = color.strip().split(" ")
+            color = color.strip().split(' ')
             to_replace = replace_to_6hex(color[0])
             for_replace = replace_to_6hex(color[1])
             colors.append([to_replace, for_replace])
@@ -82,7 +82,7 @@ class ArgumentsConfig:
         if only:
             only = only.lower().strip()
             Logger.debug("Arguments/Only: {}".format(only))
-            return only.split(",")
+            return only.split(',')
         return []
 
     def path(self):
@@ -91,8 +91,7 @@ class ArgumentsConfig:
         if proposed_path:
             if path.isdir(proposed_path):
                 return proposed_path
-            else:
-                raise FileNotFoundError("Please select a valid --path")
+            raise FileNotFoundError('Please select a valid --path')
         return None
 
     def action(self):

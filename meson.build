@@ -1,6 +1,6 @@
 project('hardcode-tray',
   version: run_command('debian/get-version').stdout().strip(),
-  meson_version: '>= 0.46.0',
+  meson_version: '>= 0.53.0',
   license: 'GPL-3.0',
   default_options: ['prefix=/usr']
 )
@@ -63,8 +63,8 @@ if meson.is_cross_build()
            'Host Machine Endianness': host_machine.endian()},
   section: 'Cross-Compilation Target')
 endif
-summary({'Source Directory': current_source_dir(),
-         'Build Directory': current_build_dir(),
+summary({'Source Directory': meson.current_source_dir(),
+         'Build Directory': meson.current_build_dir(),
          'bindir': get_option('bindir'),
          'libdir': get_option('libdir'),
          'datadir': get_option('datadir')},

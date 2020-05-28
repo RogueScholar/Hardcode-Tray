@@ -51,7 +51,7 @@ class ZipApplication(ExtractApplication):
         with ZipFile(path.join(str(icon_path), self.binary)) as zip_object:
             zip_object.extractall(self.tmp_path)
 
-        Logger.debug("Zip Application: Extracting is done.")
+        Logger.debug('Zip Application: Extracting is done.')
 
     def pack(self, icon_path):
         """Recreate the zip file from the tmp directory."""
@@ -62,8 +62,8 @@ class ZipApplication(ExtractApplication):
                          "old binary file {}".format(zip_file))
             remove(zip_file)
 
-        make_archive(zip_file.replace(".zip", ""), 'zip', self.tmp_path)
-        Logger.debug("Zip Application: Creating a new zip archive.")
+        make_archive(zip_file.replace('.zip', ''), 'zip', self.tmp_path)
+        Logger.debug('Zip Application: Creating a new zip archive.')
 
         if path.exists(self.tmp_path):
             rmtree(self.tmp_path)
