@@ -6,33 +6,31 @@ __pycache__/
 *.so
 
 # Distribution / packaging
-.Python
-env/
-build/
-builddir/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
+.eggs/*
+build/*
+builddir/*
+develop-eggs/*
+dist/*
+downloads/*
+eggs/*
+env/*
+lib/*
+lib64/*
+parts/*
+sdist/*
+var/*
+*.egg-info/*
 *.egg
+.Python
+.installed.cfg
+HardcodeTray/const.py
+hardcode-tray
 
 # PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
-
-# Installer logs
-pip-log.txt
 pip-delete-this-directory.txt
+pip-log.txt
 
 # Unit test / coverage reports
 htmlcov/
@@ -42,7 +40,7 @@ htmlcov/
 .cache
 nosetests.xml
 coverage.xml
-*,cover
+*.cover
 
 # Translations
 *.mo
@@ -55,16 +53,60 @@ docs/_build/
 
 # PyBuilder
 target/
-
-.idea/
-
 tags
 
-.vscode/
-hardcode-tray
-HardcodeTray/const.py
+# Don't accidentally publish your GPG secret keyring
+secring.*
 
-# Sublime Text 3
-*.sublime-project
+# CudaText project files are user-specific
+*.cuda-proj
+
+# JetBrains IDEs (IntelliJ IDEA, PyCharm, etc.)
+.idea/*
+## All but five files are installation-specific
+!.idea/InspectionProfiles/profiles_settings.xml
+!.idea/*.iml
+!.idea/*.ipr
+!.idea/misc.xml
+!.idea/modules.xml
+!.idea/vcs.xml
+
+# Kate
+## Swap files
+.*.kate-swp
+.swp.*
+
+# Sublime Text
+## Workspace files are user-specific
 *.sublime-workspace
-*.kateproject
+## Sublime-GitHub package stores user's GitHub tokens here
+GitHub.sublime-settings
+## SFTP configuration/credentials file
+sftp-config.json
+## Package control specific files
+Package Control.last-run
+Package Control.ca-list
+Package Control.ca-bundle
+Package Control.system-ca-bundle
+Package Control.cache/
+Package Control.ca-certs/
+Package Control.merged-ca-bundle
+Package Control.user-ca-bundle
+oscrypto-ca-bundle.crt
+bh_unicode_properties.cache
+## Cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+# Visual Studio Code
+.vscode/*
+## All but four files are installation-specific
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Wing IDE
+## Separate file for user-specific project configuration
+*.wpu

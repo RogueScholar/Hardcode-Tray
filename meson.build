@@ -50,3 +50,22 @@ configure_file(
   configuration: conf,
   install_dir: join_paths(get_option('prefix'), get_option('bindir'))
 )
+
+summary({'Project Name': meson.project_name(),
+         'Build Version': meson.project_version()})
+summary({'Build Machine OS': build_machine.system(),
+         'Build Machine CPU': build_machine.cpu(),
+         'Build Machine Endianness': build_machine.endian()},
+         section: 'Compilation Environment')
+if meson.is_cross_build()
+  summary({'Host Machine OS': host_machine.system(),
+           'Host Machine CPU': host_machine.cpu(),
+           'Host Machine Endianness': host_machine.endian()},
+  section: 'Cross-Compilation Target')
+endif
+summary({'Source Directory': current_source_dir(),
+         'Build Directory': current_build_dir(),
+         'bindir': get_option('bindir'),
+         'libdir': get_option('libdir'),
+         'datadir': get_option('datadir')},
+         section: 'Directories')

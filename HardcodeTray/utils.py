@@ -18,12 +18,12 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Hardcode-Tray. If not, see <http://www.gnu.org/licenses/>.
 """
-import subprocess
 from functools import reduce
 from gettext import gettext as _
 from os import makedirs, listdir, path, remove, symlink
 from re import findall, match, sub
 from shutil import copyfile
+from subprocess import check_output, run
 from sys import stdout
 
 from gi.repository import Gio
@@ -164,7 +164,7 @@ def create_dir(directory):
 
 def execute(command_list, verbose=True, shell=False, working_directory=None):
     """
-    Run a command using "Popen".
+    Run a command using subprocess.run().
 
     Args :
         command_list(list)
@@ -172,10 +172,12 @@ def execute(command_list, verbose=True, shell=False, working_directory=None):
     """
     Logger.debug("Executing command: {0}".format(" ".join(command_list)))
     if working_directory:
-        cmd = Popen(command_list, stdout=PIPE, stderr=PIPE, shell=False,
-                    cwd=working_directory)
+        cmd = run(
+            command_list, capture_output=True, shell=False,
+            cwd=working_directory
+        )
     else:
-        cmd = Popen(command_list, stdout=PIPE, stderr=PIPE, shell=False)
+        cmd = run(command_list, capture_output=True, shell=False)
 
     output, error = cmd.communicate()
     if verbose and error:
@@ -185,10 +187,13 @@ def execute(command_list, verbose=True, shell=False, working_directory=None):
 
 def is_installed(binary):
     """Check if a binary file exists/installed."""
-    retcode = run(
-        ['command', '-v', binary], stdout=PIPE, stderr=PIPE, shell=False
-    )
+    retcode = run(['command', '-v', binary], capture_output=True, shell=False)
     return bool(retcode == 0)
+
+
+def abs_exec_path(binary):
+    args = ['command', '-v', binary]
+    return check_output(args, shell=False, timeout=2)
 
 
 def get_iterated_icons(icons):

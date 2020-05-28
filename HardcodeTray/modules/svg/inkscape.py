@@ -20,7 +20,7 @@ along with Hardcode-Tray. If not, see <http://www.gnu.org/licenses/>.
 """
 from subprocess import run
 from HardcodeTray.modules.svg.svg import SVG, SVGNotInstalled
-from HardcodeTray.utils import execute
+from HardcodeTray.utils import abs_exec_path, execute
 
 
 class Inkscape(SVG):
@@ -30,7 +30,7 @@ class Inkscape(SVG):
         """Init function."""
         super(Inkscape, self).__init__(colors)
 
-        self.cmd = "inkscape"
+        self.cmd = abs_exec_path(self)
         if not self.is_installed():
             raise SVGNotInstalled
 
@@ -38,16 +38,16 @@ class Inkscape(SVG):
         """Convert svg to png."""
 
         is_pre_v1 = run(
-            ["inkscape", "--without-gui"], shell=False, timeout=4, check=False
+            [self.cmd, '--without-gui'], shell=False, timeout=4, check=False
         )
 
         if is_pre_v1.returncode != 0:
-            cmd = [self.cmd, "-o", output_file]
+            cmd = [self.cmd, '-o', output_file]
         else:
-            cmd = [self.cmd, "-z", "-e", output_file]
+            cmd = [self.cmd, '-z', '-e', output_file]
 
         if width and height:
-            cmd.extend(["-w", str(width), "-h", str(height)])
+            cmd.extend(['-w', str(width), '-h', str(height)])
 
         cmd.extend(input_file)
         execute(cmd, False)

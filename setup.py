@@ -3,7 +3,7 @@
 import sys
 
 from glob import iglob
-from os import path
+from os import getcwd, path
 from setuptools import setup, find_packages
 
 if sys.version_info < (3,):
@@ -23,6 +23,8 @@ if sys.version_info < (3,):
 
     Thanks!
     """.format(sys.version))
+
+here = path.normpath(getcwd())
 
 with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
@@ -57,17 +59,19 @@ setup(
     },
     setup_requires=['setuptools_scm'],
     install_requires=['CairoSVG'],
-    packages=setuptools.find_packages(where='HardcodeTray'),
+    packages=find_packages(where='HardcodeTray'),
     package_dir={'': 'HardcodeTray'},
     scripts=['hardcode-tray'],
     data_files=[
-        ('share/hardcode-tray/database', iglob('data/**/*.json', recursive=True)),
+        ('share/hardcode-tray/database',
+         iglob('data/**/*.json', recursive=True)),
     ],
     classifiers=[
         "Development Status :: 6 - Mature",
         "Environment :: Console :: Curses",
         "Intended Audience :: End Users/Desktop",
-        "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+        "License :: OSI Approved :: GNU General Public License v3 or later \
+            (GPLv3+)",
         "Natural Language :: English",
         "Operating System :: POSIX :: Linux",
         "Programming Language :: Python :: 3 :: Only",

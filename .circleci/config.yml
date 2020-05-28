@@ -1,18 +1,126 @@
-version: 2
-jobs:
-  build:
+---
+# yamllint disable rule:key-ordering rule:quoted-strings
+version: 2.1
+executors:
+  ubuntu:
     docker:
       - image: ubuntu:rolling
-    working_directory: ~/Hardcode-Tray
+    shell: /bin/bash
+    working_directory: /home/circleci/Hardcode-Tray
+    environment:
+      DEB_BUILD_OPTIONS: "future=+lfs hardening=+all reproducible=+fixfilepath"
+      DEBIAN_FRONTEND: "noninteractive"
+      DEBUILD_DPKG_BUILDPACKAGE_OPTS: "-D -F -sa -us -uc"
+      DEBUILD_LINTIAN_OPTS: "-EIi --pedantic"
+      DH_COMPAT: "13"
+      DH_INTERNAL_OPTIONS: "-v"
+      DH_VERBOSE: "1"
+      LANG: "en_US.UTF-8"
+      LANGUAGE: "en_US"
+      LC_ALL: "C.UTF-8"
+      LINTIAN_PROFILE: "ubuntu"
+      PACKAGE_VER: "$(wget -q --header='Accept: application/json' -O - --server-response 'https://github.com/bilelmoussaoui/Hardcode-Tray/releases/latest' 2>/dev/null | tr -s '\n' ' ' | sed 's/.*\"tag_name\":\"v//' | sed 's/\".*//')"
+      TZ: "America/Los_Angeles"
+jobs:
+  build_with_meson:
+    executor: ubuntu
     steps:
-      - run: >
-          apt update && DEBIAN_FRONTEND=noninteractive apt -y
-          --no-install-recommends install gettext libgirepository1.0-dev
-          libgtk-3-dev meson pylint python3-cffi python3-gi-cairo
-          python3-jsonschema && DEBIAN_FRONTEND=noninteractive apt -y
-          full-upgrade
+      - run:
+          name: Set package management tools to scripted defaults
+          command: >
+            echo -e
+            'APT::Get::Assume-Yes "true";\nDPkg::Options "--force-confnew";' |
+            tee /etc/apt/apt.conf.d/90circleci && apt update
+      - run:
+          name: Install build dependency packages
+          command: >
+            apt --install-recommends install autopkgtest coreutils devscripts
+            dh-autoreconf dh-buildinfo dh-python dh-strip-nondeterminism
+            diffoscope gettext libgirepository1.0-dev libgtk-3-dev meson pylint
+            python3-cffi python3-distlib python3-distutils-extra
+            python3-gi-cairo python3-jsonschema python3-pbr python3-pip
+            python3-pkginfo python3-stdeb quilt sed sudo tar wget xz-utils
+      - run:
+          name: Update all installed packages to most recent release version
+          command: sudo apt full-upgrade
       - checkout
-      - run: meson builddir
-      - run: ninja -C builddir install
-      - run: python3 ./tests/database/database.py
-      - run: sh ./tests/pylint.sh
+      - run:
+          name: Prepare meson build environment
+          command: meson builddir
+      - run:
+          name: Build and install with ninja
+          command: ninja -C builddir install
+      - run:
+          name: Run build tests and redirect tty output to test artifacts dir
+          command: |
+            typeset -gx TIMESTAMP="$(date +%Y%m%dT%H%M%Z)"
+            mkdir -p "${HOME}/artifacts/meson"
+            python3 ./tests/database/database.py | tee "${HOME}/artifacts/meson/database-test-ci${TIMESTAMP}.log"
+            sh ./tests/pylint.sh | tee "${HOME}/artifacts/meson/pylint-report-ci${TIMESTAMP}.log"
+      - store_artifacts:
+          path: "${HOME}/artifacts/meson"
+          destination: test-reports
+  build_with_dpkg:
+    executor: ubuntu
+    steps:
+      - run:
+          name: Use 'unminimize' script to "rehydrate" Docker image
+          command: yes | unminimize || true
+      - run:
+          name: Set package management tools to scripted defaults
+          command: >
+            echo -e
+            'APT::Get::Assume-Yes "true";\nDPkg::Options "--force-confnew";' |
+            tee /etc/apt/apt.conf.d/90circleci && apt update
+      - run:
+          name: Install build dependency packages
+          command: >
+            apt --install-recommends install autopkgtest coreutils devscripts
+            dh-autoreconf dh-buildinfo dh-python dh-strip-nondeterminism
+            diffoscope gettext libgirepository1.0-dev libgtk-3-dev meson pylint
+            python3-cffi python3-distlib python3-distutils-extra
+            python3-gi-cairo python3-jsonschema python3-pbr python3-pip
+            python3-pkginfo python3-stdeb quilt sed sudo tar wget xz-utils
+      - run:
+          name: Update all installed packages to most recent release version
+          command: sudo apt full-upgrade
+      - checkout
+      - run:
+          name: Create build directories and clean source tarball
+          command: |
+            typeset -gx TIMESTAMP="$(date +%Y%m%dT%H%M%Z)"
+            mkdir -p "hardcode-tray_${PACKAGE_VER}+${TIMESTAMP}"
+            cp -R ./* "hardcode-tray_${PACKAGE_VER}+${TIMESTAMP}"
+            cd "${CIRCLE_WORKING_DIRECTORY}/hardcode-tray_${PACKAGE_VER}+${TIMESTAMP}" || exit 1
+            rm -rf .git .circleci .github screenshots && cd ..
+            tar cf "hardcode-tray_${PACKAGE_VER}+${TIMESTAMP}.orig.tar" "hardcode-tray_${PACKAGE_VER}+${TIMESTAMP}"
+            xz -z -T 0 "hardcode-tray_${PACKAGE_VER}+${TIMESTAMP}.orig.tar"
+            cd "${CIRCLE_WORKING_DIRECTORY}/hardcode-tray_${PACKAGE_VER}+${TIMESTAMP}" || exit 1
+      - run:
+          name: Build binary and source Debian packages
+          command: |
+            perl -i -pe "s/$(grep -P -m 1 -o '\d+\.[\d\.\w]*-[\d\.\w\+~-]+' debian/changelog)/${PACKAGE_VER}+${TIMESTAMP}-0ci${CIRCLE_SHA1}/" debian/changelog
+            sed -E -i "1s/(unstable|experimental)/$(lsb_release -cs)/" debian/changelog
+            CI=true debuild
+            mkdir -p "${HOME}/artifacts/debian"
+            cp "${CIRCLE_WORKING_DIRECTORY}/*.{deb,dsc,changes,buildinfo,xz}" "${HOME}/artifacts/debian"
+            cp "${CIRCLE_WORKING_DIRECTORY}/*.ddeb" "${HOME}/artifacts/debian" || return 0
+      - store_artifacts:
+          path: "${HOME}/artifacts/debian"
+          destination: debian-package
+workflows:
+  version: 2
+  hardcode-tray-build-and-test:
+    jobs:
+      - build_with_meson:
+          filters:
+            branches:
+              only:
+                - master
+      - build_with_dpkg:
+          filters:
+            branches:
+              only:
+                - master
+                - debian
+...
